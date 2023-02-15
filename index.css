@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:300,400,500,700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.links-container a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: #344563;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo {
+  width: 7rem;
+  height: 1.25rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #6070ff;
+  line-height: 1.25rem;
+  cursor: pointer;
+}
+
+#headline {
+  color: #091e42;
+  font-weight: 700;
+  line-height: 3.75rem;
+  text-align: left;
+}
+
+#description {
+  color: #344563;
+  font-weight: 400;
+  text-align: justify;
+}
+
+@media only screen and (min-width: 355px) {
+  .hamburger img {
+    max-width: 1.25rem;
+  }
+
+  .header {
+    height: 3rem;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    /* height: 100vh; */
+    justify-content: center;
+  }
+
+  .links-container {
+    display: none;
+  }
+
+  #headline {
+    font-size: 3rem;
+    line-height: 3.25rem;
+  }
+
+  #description {
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: 0em;
+    text-align: justify;
+  }
+
+  #subtitle {
+    line-height: 1.5rem;
+    color: #7f8cff;
+    margin: 0;
+  }
+
+  .social-links {
+    display: inline-flex;
+    flex-direction: row;
+    width: 8rem;
+    justify-content: space-between;
+  }
+
+  .social-links img {
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    height: 3rem;
+    align-items: center;
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
+  .links {
+    width: 4.25rem;
+    height: 1.25rem;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .container {
+    margin-top: 10.25rem;
+    margin-left: 12rem;
+  }
+
+  #headline {
+    max-width: 57.5rem;
+    font-size: 3rem;
+  }
+
+  #description {
+    width: 57.5rem;
+    line-height: 1.75rem;
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+  }
+
+  #subtitle {
+    line-height: 1.5rem;
+    text-align: left;
+    color: #7f8cff;
+    margin: 0;
+  }
+
+  .social-links {
+    display: inline-flex;
+    flex-direction: row;
+    width: 8rem;
+    justify-content: space-between;
+  }
+
+  .social-links img {
+    cursor: pointer;
+  }
+
+  .links-container {
+    display: block;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 355px) {
+  body {
+    display: none;
+  }
+}
