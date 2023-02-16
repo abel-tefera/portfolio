@@ -111,6 +111,8 @@ body {
   background: #ebebff;
   position: absolute;
   transform: rotate(-45deg);
+  background-image: url("/assets/rectangle.svg");
+  background-size: contain;
 }
 
 #rectangle-2 {
@@ -121,6 +123,8 @@ body {
   background: #6070ff;
   position: absolute;
   transform: rotate(45deg);
+  background-image: url("/assets/rectangle-purple.svg");
+  background-size: contain;
 }
 
 #rectangle-4 {
@@ -131,6 +135,8 @@ body {
   background: #ebebff;
   position: absolute;
   transform: rotate(-46.14deg);
+  background-image: url("/assets/rectangle.svg");
+  background-size: contain;
 }
 
 #semi-circle-2 {
@@ -139,7 +145,9 @@ body {
   left: -15.0419921875px;
   top: 140.4661865234375px;
   position: absolute;
-  transform: rotate(10deg);
+  transform: rotate(205.08deg);
+  border-radius: 20px 20px 0 0;
+  background-color: #6070ff;
 }
 
 #semi-circle-1 {
@@ -148,7 +156,9 @@ body {
   left: 341.7578125px;
   top: 528.9px;
   position: absolute;
-  transform: rotate(-15.08deg);
+  transform: rotate(185.08deg);
+  border-radius: 20px 20px 0 0;
+  background-color: #6070ff;
 }
 
 #circle-2 {
@@ -157,6 +167,8 @@ body {
   left: 237px;
   top: 657.0955810546875px;
   position: absolute;
+  background-image: url("/assets/circle.svg");
+  background-size: contain;
 }
 
 #rectangle-3 {
@@ -167,6 +179,8 @@ body {
   transform: rotate(23.34deg);
   position: absolute;
   background: #ebebff;
+  background-image: url("/assets/rectangle-grey.svg");
+  background-size: contain;
 }
 
 #outer-circle-1 {
@@ -176,6 +190,8 @@ body {
   top: 540.44140625px;
   position: absolute;
   transform: rotate(69.41deg);
+  background-image: url("/assets/outer-circle-grey.svg");
+  background-size: contain;
 }
 
 #circle-1 {
@@ -185,6 +201,8 @@ body {
   top: 155.8089599609375px;
   position: absolute;
   transform: matrix(0.76, 0.65, 0.65, -0.76, 0, 0);
+  background-image: url("/assets/circle-grey.svg");
+  background-size: contain;
 }
 
 #outer-circle-2 {
@@ -193,6 +211,8 @@ body {
   left: 340px;
   top: 152.23828125px;
   position: absolute;
+  background-image: url("/assets/outer-circle.svg");
+  background-size: contain;
 }
 
 @media only screen and (min-width: 768px) {
