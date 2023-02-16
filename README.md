@@ -8,8 +8,6 @@
 
 </div>
 
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -22,14 +20,12 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-<!-- - [❓ FAQ (OPTIONAL)](#faq) -->
 - [📝 License](#license)
 
 
@@ -91,9 +87,13 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to clone and run this project you need:
 
-- A browser
+- A working browser
+- Installation of Git
+- Internet browser
+- Code editor like VS code
+- Live dev server plugin on VS code
 
 ### Setup
 
@@ -107,11 +107,11 @@ Install this project with: N/A
 
 ### Usage
 
-To run the project, execute the following command: N/A
+To run the project, execute the following commands:
 
-### Run tests
-
-To run tests, run the following command: N/A
+- Run the index.html file using a live server
+- Make changes to the HTML/CSS
+- See the changes on your browser without refreshing
 
 ### Deployment
 
@@ -126,6 +126,16 @@ You can deploy this project using: N/A
 - GitHub: [@abel-tefera](https://github.com/abel-tefera)
 - Twitter: [@twitterhandle](https://twitter.com/abelteferabelay)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/abel-tefera-b1b625153)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> Coming soon...
+
+- [ ] **Portfolio Section**
+- [ ] **About Section**
+- [ ] **Contact Section**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
