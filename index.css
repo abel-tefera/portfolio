@@ -100,7 +100,7 @@ body {
   flex-direction: column;
   padding: 1rem;
   gap: 0.75rem;
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #dfe1e6;
   border-radius: 1rem;
   margin-top: 3rem;
@@ -112,7 +112,7 @@ body {
   font-weight: 700;
   line-height: 2.75rem;
   margin-top: 1rem;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .work-description {
@@ -121,8 +121,8 @@ body {
   line-height: 24px;
   text-align: left;
   color: #344563;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .work-tags-div {
@@ -132,8 +132,8 @@ body {
   justify-content: space-between;
   width: 12rem;
   margin-left: -2.5rem;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .work-info {
@@ -193,13 +193,13 @@ body {
 }
 
 .languages p {
-  border: 1px 1px 0px 0px solid;
+  border: 1px 1px 0 0 solid;
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.5rem;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: left;
-  color: #000000;
+  color: #000;
   margin-left: -2.5rem;
   border-bottom: 1px solid #dfe1e6;
   padding-top: 1rem;
