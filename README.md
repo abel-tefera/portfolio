@@ -99,11 +99,17 @@ In order to clone and run this project you need:
 
 Clone this repository to your desired folder:
 
+- To clone the project, copy the repository and git clone
+- Open the folder using VS code
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Install
 
-Install this project with: N/A
+Install this project with: 
+
+- Add linters to your local workspace by installing the eslint extension on VS code
+- Install eslint on node using `npm i -g eslint`
 
 ### Usage
 
