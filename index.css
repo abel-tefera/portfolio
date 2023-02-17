@@ -8,12 +8,13 @@ body {
 
 .disable-default {
   list-style-type: none;
+  padding-left: 0;
 }
 
-.disable-default,
-.disable-default:hover,
-.disable-default:focus,
-.disable-default:active {
+.disable-default-link,
+.disable-default-link:hover,
+.disable-default-link:focus,
+.disable-default-link:active {
   text-decoration: none;
   color: #344563;
 }
@@ -76,7 +77,6 @@ body {
   width: 8rem;
   justify-content: space-between;
   align-items: center;
-  margin-left: -2.5rem;
   margin-top: 0.25rem;
 }
 
@@ -125,13 +125,19 @@ body {
   margin-bottom: 0;
 }
 
+.language-span {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .work-tags-div {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 12rem;
-  margin-left: -2.5rem;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -200,7 +206,6 @@ body {
   letter-spacing: 0;
   text-align: left;
   color: #000;
-  margin-left: -2.5rem;
   border-bottom: 1px solid #dfe1e6;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -247,6 +252,25 @@ body {
   overflow: hidden;
   width: 100%;
   height: 100vh;
+}
+
+.language-list-item {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.language-list-item li {
+  background-color: #f7f7f9;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.language-list-item li img {
+  padding: 0.5rem;
 }
 
 #rectangle-1 {
@@ -325,7 +349,7 @@ body {
   transform: rotate(23.34deg);
   position: absolute;
   background: #ebebff;
-  background-image: url("/assets/rectangle-grey.svg");
+  background-image: url("/assets/rectangle.svg");
   background-size: contain;
 }
 
