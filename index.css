@@ -130,6 +130,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  border-bottom: 1px solid #dfe1e6;
 }
 
 .work-tags-div {
@@ -183,8 +184,7 @@ body {
   line-height: 24px;
   letter-spacing: 0.03em;
   text-align: center;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem;
   display: block;
 }
 
@@ -201,7 +201,6 @@ body {
   letter-spacing: 0;
   text-align: left;
   color: #000;
-  border-bottom: 1px solid #dfe1e6;
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 0;
