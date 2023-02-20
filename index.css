@@ -134,11 +134,8 @@ a:active {
 }
 
 .work-tags-div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  width: 12rem;
+  width: 16rem;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -151,6 +148,7 @@ a:active {
 }
 
 .work-tags {
+  float: left;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.03em;
@@ -161,6 +159,7 @@ a:active {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   border-radius: 0.5rem;
+  margin-right: 0.8rem;
 }
 
 .work-content {
