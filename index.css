@@ -541,7 +541,7 @@ input:focus {
   }
 
   .description {
-    /* max-width: 57.5rem; */
+    max-width: 57.5rem;
     line-height: 1.75rem;
     font-size: 1.25rem;
     text-align: justify;
@@ -660,12 +660,13 @@ input:focus {
     font-size: 1.25rem;
   }
 
-  .contact-container {
-    padding-left: 30rem;
-    padding-right: 30rem;
+  .contact {
+    width: 50%;
+    place-self: center;
   }
 
   .contact-form {
     align-items: center;
+    width: 50%;
   }
 }
