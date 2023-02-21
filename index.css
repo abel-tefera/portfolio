@@ -56,17 +56,16 @@ button:disabled {
   margin-right: 1rem;
 }
 
-.introduction {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
 .headline {
   color: #091e42;
   font-weight: 700;
   font-size: 3rem;
   line-height: 3.25rem;
   margin-bottom: 0;
+}
+
+.about {
+  margin: 0 3rem;
 }
 
 .hamburger img {
@@ -77,6 +76,10 @@ button:disabled {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.introduction {
+  margin: 6rem 3rem;
 }
 
 .left-right-margin {
@@ -153,6 +156,7 @@ button:disabled {
   border-radius: 1rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
+  justify-self: center;
 }
 
 .work-headline {
@@ -188,6 +192,12 @@ button:disabled {
   margin-top: 0;
   margin-bottom: 0.5rem;
   height: 2.5rem;
+}
+
+.about-headline {
+    font-size: 3rem;
+    color: #091e42;
+    margin: 6rem 0 0 0;
 }
 
 .work-info {
@@ -262,10 +272,6 @@ ul {
   margin-top: 7rem;
 }
 
-.about {
-  margin-bottom: 3rem;
-}
-
 .top-right-curved {
   border-top-right-radius: 6rem;
   box-shadow: 6rem 0 0 0 #f4f5f7;
@@ -309,6 +315,7 @@ ul {
   margin-top: 1rem;
   margin-bottom: 3rem;
   width: 100%;
+  align-items: center;
 }
 
 .contact-form input,
@@ -341,11 +348,23 @@ input:focus {
 
 .work-img {
   width: 100%;
-  border-radius: 0.5rem;
+  border-radius: 3rem;
 }
 
 .work-info-sub {
   color: #7a869a;
+}
+
+.contact-form > button:active {
+  background: none;
+  color: #fff;
+}
+
+.contact-form > button:hover {
+  background: #fff;
+  color: #6070ff;
+  box-shadow: 0 0.5rem 1rem rgba(64, 83, 252, 0.24);
+  cursor: pointer;
 }
 
 .grey-dot {
@@ -525,18 +544,9 @@ input:focus {
     color: #344563;
   }
 
-  .container {
-    margin-left: 12rem;
-  }
-
   .headline {
     margin-top: 10.25rem;
     max-width: 57.5rem;
-    font-size: 3rem;
-  }
-
-  .about-headline {
-    /* max-width: 57.5rem; */
     font-size: 3rem;
   }
 
@@ -563,7 +573,6 @@ input:focus {
     margin-left: 3rem;
     margin-right: 3rem;
     margin-top: 7rem;
-    width: 100%;
   }
 
   .social-links {
@@ -588,6 +597,10 @@ input:focus {
     margin-right: 0.5rem;
   }
 
+  .introduction {
+    margin: 3rem 6rem 3rem 12rem;
+  }
+
   .work-info p {
     font-size: 1.125rem;
     font-weight: 600;
@@ -604,8 +617,7 @@ input:focus {
 
   .work-card {
     flex-direction: row;
-    width: 80%;
-    justify-self: center;
+    width: 90%;
   }
 
   .work-card-reversed {
@@ -622,13 +634,16 @@ input:focus {
   .work-img {
     max-width: 50%;
     padding: 1rem;
-    border-radius: 3rem;
   }
 
   .about {
+    margin-bottom: 3rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 
   .about-myself {
@@ -640,7 +655,6 @@ input:focus {
 
   .languages {
     width: 50%;
-    margin-right: 6rem;
   }
 
   .language-list-item {
@@ -666,7 +680,10 @@ input:focus {
   }
 
   .contact-form {
-    align-items: center;
     width: 50%;
+  }
+
+  .contact-container {
+    border-top-left-radius: 12rem;
   }
 }
