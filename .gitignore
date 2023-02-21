@@ -1,1 +1,6 @@
+/node_modules
 test.txt
+package.json
+package-lock.json
+.eslintrc.yml
+.stylelintrc.json
