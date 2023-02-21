@@ -11,6 +11,10 @@ body {
   padding-left: 0;
 }
 
+.shapes {
+  display: none;
+}
+
 a,
 a:hover,
 a:focus,
@@ -155,8 +159,8 @@ button:disabled {
   font-size: 2rem;
   font-weight: 700;
   line-height: 2.75rem;
-  margin-top: 1rem;
-  margin-bottom: 0;
+  margin: 0;
+  color: #091e42;
 }
 
 .work-description {
@@ -182,7 +186,7 @@ button:disabled {
   justify-content: space-between;
   width: 12rem;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
   height: 2.5rem;
 }
 
@@ -205,15 +209,20 @@ button:disabled {
 }
 
 .work-content {
-  display: flex;
-  width: 100%;
+  margin: 0 1rem;
+}
+
+.work-content > h1,
+div,
+p,
+ul {
+  padding: 0.3rem 0;
 }
 
 .work-info p {
   font-size: 0.813rem;
   font-weight: 600;
   line-height: 1rem;
-  margin-top: 0.25rem 0.25rem 0.5rem 0.5rem;
 }
 
 .work-button {
@@ -286,6 +295,9 @@ button:disabled {
 }
 
 .contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #6070ff;
   color: #fff;
   border-top-left-radius: 6rem;
@@ -327,7 +339,7 @@ input:focus {
   color: #344563;
 }
 
-.title img {
+.work-img {
   width: 100%;
   border-radius: 0.5rem;
 }
@@ -489,55 +501,97 @@ input:focus {
 
 @media only screen and (min-width: 768px) {
   .header {
-    height: 3rem;
+    height: 6rem;
     align-items: center;
     margin-left: 6rem;
-    margin-right: 6rem;
+    margin-right: 3rem;
+  }
+
+  .logo {
+    width: 12rem;
+    height: 1.25rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #6070ff;
   }
 
   .links {
     width: 4.25rem;
     height: 1.25rem;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: 1.25rem;
     margin-left: 1rem;
-    margin-right: 1rem;
     color: #344563;
   }
 
   .container {
-    margin-top: 10.25rem;
     margin-left: 12rem;
   }
 
   .headline {
+    margin-top: 10.25rem;
     max-width: 57.5rem;
     font-size: 3rem;
   }
 
+  .about-headline {
+    /* max-width: 57.5rem; */
+    font-size: 3rem;
+  }
+
   .description {
-    width: 57.5rem;
+    /* max-width: 57.5rem; */
     line-height: 1.75rem;
     font-size: 1.25rem;
     text-align: justify;
   }
 
+  .work-headline {
+    font-size: 2.5rem;
+  }
+
   .subtitle {
     line-height: 1.5rem;
-    text-align: left;
     color: #7f8cff;
     margin: 0;
+    font-weight: 500;
+    font-size: medium;
+  }
+
+  .work-container {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 7rem;
+    width: 100%;
   }
 
   .social-links {
     display: inline-flex;
-    width: 8rem;
+    width: 10rem;
     justify-content: space-between;
   }
 
   .social-links img {
     cursor: pointer;
+  }
+
+  .work-info {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+  }
+
+  .work-info > p,
+  span {
+    margin-right: 0.5rem;
+  }
+
+  .work-info p {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1rem;
   }
 
   .links-container {
@@ -546,5 +600,72 @@ input:focus {
 
   .hamburger {
     display: none;
+  }
+
+  .work-card {
+    flex-direction: row;
+    width: 80%;
+    justify-self: center;
+  }
+
+  .work-card-reversed {
+    flex-direction: row-reverse;
+  }
+
+  .work-content > h1,
+  div,
+  p,
+  ul {
+    padding: 0.75rem 0;
+  }
+
+  .work-img {
+    max-width: 50%;
+    padding: 1rem;
+    border-radius: 3rem;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .about-myself {
+    flex-direction: column;
+    width: 45%;
+    box-sizing: border-box;
+    margin-right: 3rem;
+  }
+
+  .languages {
+    width: 50%;
+    margin-right: 6rem;
+  }
+
+  .language-list-item {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .language-list-item li {
+    flex-direction: column;
+    width: fit-content;
+    margin-right: 1rem;
+    padding: 1rem;
+  }
+
+  .about-description {
+    line-height: 1.75rem;
+    font-size: 1.25rem;
+  }
+
+  .contact-container {
+    padding-left: 30rem;
+    padding-right: 30rem;
+  }
+
+  .contact-form {
+    align-items: center;
   }
 }
