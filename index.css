@@ -290,16 +290,7 @@ button:disabled {
   color: #fff;
   border-top-left-radius: 6rem;
 }
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-  width: 100%;
-}
-
-.contact-form input,
+ .contact-form input,
 textarea {
   background-color: #fff;
   border: 1px solid #cfd8dc;
