@@ -149,17 +149,22 @@ a:active {
   font-weight: 500;
 }
 
+.title img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.social-links img {
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
 .social-links {
   display: inline-flex;
   width: 10rem;
   justify-content: space-between;
   align-items: center;
   margin-top: 0.25rem;
-}
-
-.social-links img {
-  cursor: pointer;
-  transition: transform 0.5s;
 }
 
 .language-list-item {
@@ -169,6 +174,10 @@ a:active {
 }
 
 .language-list-item img {
+  padding: 0.5rem;
+}
+
+.language-list-item li img {
   padding: 0.5rem;
 }
 
@@ -598,7 +607,7 @@ input:focus {
   }
 
   .about {
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
     margin-left: 10%;
     margin-right: 15%;
     display: flex;
