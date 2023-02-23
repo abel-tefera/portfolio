@@ -126,17 +126,26 @@ a:active {
   font-weight: 500;
 }
 
+.title img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.social-links img {
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.language-list-item li img {
+  padding: 0.5rem;
+}
+
 .social-links {
   display: inline-flex;
   width: 10rem;
   justify-content: space-between;
   align-items: center;
   margin-top: 0.25rem;
-}
-
-.social-links img {
-  cursor: pointer;
-  transition: transform 0.5s;
 }
 
 .social-links img:hover {
@@ -342,11 +351,6 @@ input:focus {
   color: #344563;
 }
 
-.title img {
-  width: 100%;
-  border-radius: 0.5rem;
-}
-
 .work-info-sub {
   color: #7a869a;
 }
@@ -384,10 +388,6 @@ input:focus {
   display: flex;
   justify-content: start;
   align-items: center;
-}
-
-.language-list-item li img {
-  padding: 0.5rem;
 }
 
 #rectangle-1 {
