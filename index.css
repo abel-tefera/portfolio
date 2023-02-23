@@ -1,3 +1,6 @@
+/* stylelint-disable shorthand-property-no-redundant-values */
+/* stylelint-disable color-function-notation */
+/* stylelint-disable alpha-value-notation */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:300,400,500,700&display=swap");
 
 body {
@@ -141,6 +144,10 @@ a:active {
 .social-links img {
   cursor: pointer;
   transition: transform 0.5s;
+}
+
+.language-list-item img {
+  padding: 0.5rem;
 }
 
 .social-links img:hover {
@@ -426,10 +433,6 @@ input:focus {
   align-items: center;
 }
 
-.language-list-item li img {
-  padding: 0.5rem;
-}
-
 @media only screen and (min-width: 768px) {
   .header {
     height: 6rem;
@@ -444,6 +447,11 @@ input:focus {
     font-weight: 700;
     font-size: 1.5rem;
     color: #6070ff;
+    transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
+  }
+
+  .logo:hover {
+    font-size: 1.75rem;
   }
 
   .links {
@@ -507,14 +515,6 @@ input:focus {
     cursor: pointer;
   }
 
-  .logo {
-    transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
-  }
-
-  .logo:hover {
-    font-size: 1.75rem;
-  }
-
   .work-info {
     display: flex;
     align-items: center;
@@ -522,19 +522,26 @@ input:focus {
     width: 100%;
   }
 
-  .work-info > p,
-  span {
-    margin-right: 0.5rem;
-  }
-
-  .introduction {
-    margin: 3rem 6rem 3rem 12rem;
+  .work-content > h1,
+  div,
+  p,
+  ul {
+    padding: 0.75rem 0;
   }
 
   .work-info p {
     font-size: 1.125rem;
     font-weight: 600;
     line-height: 1rem;
+  }
+
+  .work-info p,
+  span {
+    margin-right: 0.5rem;
+  }
+
+  .introduction {
+    margin: 3rem 6rem 3rem 12rem;
   }
 
   .links-container {
@@ -554,19 +561,8 @@ input:focus {
     font-size: 1.2rem;
   }
 
-  .work-tags {
-    font-size: 1rem;
-  }
-
   .work-card-reversed {
     flex-direction: row-reverse;
-  }
-
-  .work-content > h1,
-  div,
-  p,
-  ul {
-    padding: 0.75rem 0;
   }
 
   .work-img {
@@ -598,6 +594,7 @@ input:focus {
   }
 
   .work-tags {
+    font-size: 1rem;
     margin-right: 1rem;
   }
 
