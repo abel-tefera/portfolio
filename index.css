@@ -19,28 +19,38 @@ a:active {
   color: inherit;
 }
 
-button {
+.btn {
   color: #6070ff;
   border-color: #6070ff;
   border-radius: 0.5rem;
   width: fit-content;
   background: white;
+  animation-duration: 0.8s;
 }
 
-button:hover {
-  background: #6070ff;
-  box-shadow: 0 0.5rem 1rem rgba(64, 83, 252, 0.24);
-  color: #fff;
+.btn:hover {
+  cursor: pointer;
+  animation-name: btn-hover;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+
+.btn-inverse:hover {
+  animation-name: none;
+  border: 1px solid white;
   cursor: pointer;
 }
 
-button:active {
+.btn:active {
   background: #2230d2;
   color: #fff;
 }
 
-button:disabled {
-  color: #5e6c84;
+@keyframes btn-hover {
+  100% {
+    box-shadow: inset 11rem 0 0 0 #6070ff, 0 8px 16px rgba(64, 83, 252, 0.24);
+    color: #fff;
+  }
 }
 
 .header {
@@ -116,6 +126,20 @@ button:disabled {
   font-weight: 500;
 }
 
+.title img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.social-links img {
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.language-list-item li img {
+  padding: 0.5rem;
+}
+
 .social-links {
   display: inline-flex;
   width: 10rem;
@@ -124,8 +148,8 @@ button:disabled {
   margin-top: 0.25rem;
 }
 
-.social-links img {
-  cursor: pointer;
+.social-links img:hover {
+  transform: scale(1.5);
 }
 
 .logo {
@@ -327,11 +351,6 @@ input:focus {
   color: #344563;
 }
 
-.title img {
-  width: 100%;
-  border-radius: 0.5rem;
-}
-
 .work-info-sub {
   color: #7a869a;
 }
@@ -369,10 +388,6 @@ input:focus {
   display: flex;
   justify-content: start;
   align-items: center;
-}
-
-.language-list-item li img {
-  padding: 0.5rem;
 }
 
 #rectangle-1 {
@@ -504,6 +519,7 @@ input:focus {
     margin-left: 1rem;
     margin-right: 1rem;
     color: #344563;
+    transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
   }
 
   .container {
@@ -546,5 +562,23 @@ input:focus {
 
   .hamburger {
     display: none;
+  }
+
+  .logo {
+    width: 12rem;
+    height: 1.25rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #6070ff;
+    transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
+  }
+
+  .logo:hover {
+    font-size: 1.75rem;
+  }
+
+  .links:hover {
+    color: #396df2;
+    font-size: 1.5rem;
   }
 }
