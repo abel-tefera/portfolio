@@ -270,24 +270,30 @@
           with it
         </p>
         <form
+          title="Contact Me"
           class="contact-form"
           action="https://formspree.io/f/mqkoqbre"
           method="post"
         >
+          <label for="name" title="Name"></label> 
           <input
             name="name"
             type="text"
             placeholder="name"
             maxlength="30"
             required
+            title="Name"
           />
-          <input name="email" type="email" placeholder="email" required />
+          <label for="email" >Email</label> 
+          <input name="email" type="email" placeholder="email" required title="Email"/>
+          <label for="message">Message</label> 
           <textarea
             name="message"
             rows="6"
             placeholder="Write your message here"
             maxlength="500"
             required
+            title="Message"
           ></textarea>
           <button outlined type="submit" class="btn btn-inverse">
             Get in touch

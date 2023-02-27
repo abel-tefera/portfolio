@@ -393,6 +393,11 @@ textarea {
   box-sizing: border-box;
 }
 
+.contact-form label {
+  visibility: hidden;
+  height: 0;
+}
+
 textarea:focus,
 input:focus {
   outline: none;
