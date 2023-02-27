@@ -73,9 +73,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+> Here's the link to my portfolio: 
 
-- [N/A](https://google.com)
+- [Abel's Portfolio](https://abel-tefera.github.io/#next)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
