@@ -24,8 +24,8 @@ a:active {
 }
 
 .btn {
-  border: 1px solid #142CFF;
-  color: #142CFF;
+  border: 1px solid #142cff;
+  color: #142cff;
   border-radius: 0.5rem;
   width: fit-content;
   background: white;
@@ -40,7 +40,7 @@ a:active {
 }
 
 .btn:hover {
-  background: #142CFF;
+  background: #142cff;
   box-shadow: 0 0.5rem 1rem rgba(64, 83, 252, 0.24);
   color: #fff;
   cursor: pointer;
@@ -92,7 +92,7 @@ a:active {
 }
 
 .hamburger img {
-  color: #142CFF;
+  color: #142cff;
 }
 
 .container {
@@ -190,7 +190,7 @@ a:active {
   height: 1.25rem;
   font-weight: 700;
   font-size: 1.125rem;
-  color: #142CFF;
+  color: #142cff;
   line-height: 1.25rem;
   cursor: pointer;
 }
@@ -267,7 +267,7 @@ a:active {
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.03em;
-  color: #142CFF;
+  color: #142cff;
   background-color: #ebebff;
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   border-radius: 0.5rem;
@@ -359,7 +359,7 @@ ul {
 .contact-container::before {
   content: "";
   position: absolute;
-  background-color: #142CFF;
+  background-color: #142cff;
   background-image: url("assets/contact-form-shapes-mobile.svg");
   background-size: contain;
   background-position: right;
@@ -433,7 +433,7 @@ input:focus {
 
 .contact-form > button:hover {
   background: #fff;
-  color: #142CFF;
+  color: #142cff;
   box-shadow: 0 0.5rem 1rem rgba(64, 83, 252, 0.24);
   cursor: pointer;
 }
@@ -492,7 +492,7 @@ input:focus {
     height: 1.25rem;
     font-weight: 700;
     font-size: 1.5rem;
-    color: #142CFF;
+    color: #142cff;
     transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
   }
 
@@ -654,7 +654,7 @@ input:focus {
     cursor: pointer;
     background: inherit;
     box-shadow: none;
-    color: #142CFF;
+    color: #142cff;
   }
 
   .btn-inverse:hover {
@@ -670,7 +670,7 @@ input:focus {
 
   @keyframes btn-hover {
     100% {
-      box-shadow: inset 11rem 0 0 0 #142CFF, 0 8px 16px rgba(64, 83, 252, 0.24);
+      box-shadow: inset 11rem 0 0 0 #142cff, 0 8px 16px rgba(64, 83, 252, 0.24);
       color: #fff;
     }
   }
