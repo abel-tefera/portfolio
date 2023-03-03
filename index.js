@@ -39,33 +39,37 @@ const workData = [
 
 class workCard extends HTMLElement {
   connectedCallback() {
-    const { headline, subtitles, description, tags, imgSrc } = this.attributes;
-  //   const tagsLi = tags
-  //     .map(
-  //       (tag) => `<li>
-  //   <p class="work-tags">${tag}</p>
-  // </li>`
-  //     )
-  //     .join("");
+    const { i, headline, subtitles, description, tags, imgSrc } =
+      this.attributes;
+    const tagsArr = tags.value.split(",");
+    const subtitlesArr = subtitles.value.split(",");
 
-  //   console.log("TAgS", tagsLi);
+    const reverse = parseInt(i.value) % 2 === 0 ? "work-card-reversed" : "";
 
-    this.innerHTML = `<div class="work-card">
-      <img alt="${headline}" class="work-img" src="${imgSrc}" />
+    const tagsLi = tagsArr
+      .map(
+        (tag) => `<li>
+    <p class="work-tags">${tag}</p>
+  </li>`
+      )
+      .join("");
+
+    this.innerHTML = `<div class="work-card ${reverse}">
+      <img alt="${headline.value}" class="work-img" src="${imgSrc.value}" />
       <div class="work-content">
-        <h1 class="work-headline">${headline}</h1>
+        <h1 class="work-headline">${headline.value}</h1>
         <ul class="work-info disable-default">
-          <li><p class="work-info-title">${subtitles[0]}</p></li>
+          <li><p class="work-info-title">${subtitlesArr[0]}</p></li>
           <li class="grey-dot"></li>
-          <li><p class="work-info-sub">${subtitles[1]}</p></li>
+          <li><p class="work-info-sub">${subtitlesArr[1]}</p></li>
           <li class="grey-dot"></li>
-          <li><p class="work-info-sub">${subtitles[2]}</p></li>
+          <li><p class="work-info-sub">${subtitlesArr[2]}</p></li>
         </ul>
         <p class="work-description">
-          ${description}
+          ${description.value}
         </p>
         <ul class="work-tags-div disable-default">
-        'das'
+        ${tagsLi}
         </ul>
       <button outlined class="btn work-button">See Project</button>
     </div>
@@ -76,17 +80,16 @@ class workCard extends HTMLElement {
 customElements.define("work-card", workCard);
 
 const main = () => {
-  console.log("MAIN");
-  for (const work of workData) {
+  for (const [i, work] of workData.entries()) {
     const { headline, subtitles, description, tags, imgSrc } = work;
     const workItem = document.createElement("li");
-    workItem.setAttribute("className", "disable-default");
     workItem.innerHTML = `<work-card
     headline='${headline}'
     subtitles='${subtitles}'
     description='${description}'
     tags='${tags}'
     imgSrc='${imgSrc}'
+    i='${i + 1}'
     ></work-card>`;
 
     const workContainer = document.querySelector(".work-container");

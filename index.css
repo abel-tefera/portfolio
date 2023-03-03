@@ -646,12 +646,12 @@ input:focus {
     width: 90%;
   }
 
-  .work-description {
-    font-size: 1.2rem;
-  }
-
   .work-card-reversed {
     flex-direction: row-reverse;
+  }
+
+  .work-description {
+    font-size: 1.2rem;
   }
 
   .work-img {
