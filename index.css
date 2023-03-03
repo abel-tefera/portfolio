@@ -3,6 +3,10 @@
 /* stylelint-disable alpha-value-notation */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:300,400,500,700&display=swap");
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Poppins, sans-serif;
   font-style: normal;
@@ -474,6 +478,54 @@ input:focus {
   align-items: center;
 }
 
+.mobile-overlay {
+  height: 0;
+  width: 0;
+  position: fixed;
+  background-color: hsla(234deg, 100%, 55%, 0.7);
+  z-index: 10;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  transition: height 0.5s;
+  backdrop-filter: blur(0.5rem);
+}
+
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.overlay-content a {
+  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 2.75rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.mobile-overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.closebtn {
+  position: absolute;
+  top: 3%;
+  right: 0;
+  margin-right: 3rem;
+  font-size: 3.75rem;
+  color: #fff;
+  font-weight: 300;
+}
+
 @media only screen and (min-width: 768px) {
   .header {
     height: 6rem;
@@ -506,13 +558,10 @@ input:focus {
     transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
   }
 
-  .links:hover {
+  .links:hover,
+  .links-container .active {
     color: #396df2;
     font-size: 1.5rem;
-  }
-
-  .links:focus {
-    color: #396df2;
   }
 
   .headline {
