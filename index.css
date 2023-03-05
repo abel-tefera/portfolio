@@ -535,6 +535,7 @@ input:focus {
 .modal {
   position: fixed;
   height: 100vh;
+  width: 100vw;
   top: 0;
   left: 0;
   z-index: 10;
@@ -543,11 +544,18 @@ input:focus {
   align-self: center;
   justify-self: center;
   justify-content: center;
-  padding: 3rem 1rem;
+  padding-top: 6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   box-sizing: border-box;
   transition: opacity 0.5s ease, visibility 0.5s ease;
   opacity: 0;
   pointer-events: none;
+  overflow-y: scroll;
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
 }
 
 .modal-overlay {
@@ -657,10 +665,10 @@ input:focus {
 
 @media only screen and (min-width: 768px) {
   .header {
-    height: 6rem;
+    height: 4rem;
     align-items: center;
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   .logo {
@@ -749,12 +757,12 @@ input:focus {
   }
 
   .work-info p {
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1rem;
   }
 
   .introduction {
-    margin: 3rem 6rem 3rem 12rem;
+    margin: 3rem 6rem 3rem 6rem;
   }
 
   .links-container {
@@ -767,7 +775,7 @@ input:focus {
 
   .work-card {
     flex-direction: row;
-    width: 90%;
+    width: 95%;
   }
 
   .work-card-reversed {
@@ -775,7 +783,7 @@ input:focus {
   }
 
   .work-description {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .work-img {
@@ -861,7 +869,7 @@ input:focus {
   }
 
   .contact {
-    width: 50%;
+    width: 75%;
     place-self: center;
   }
 
@@ -888,14 +896,14 @@ input:focus {
 
   .shapes::before {
     background-image: url("assets/headline-background.svg");
-    top: 10%;
+    top: -15%;
     z-index: 1;
   }
 
   .modal {
-    padding: 4rem 6rem;
-    max-height: 100vh;
-    overflow-y: scroll;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-top: 12rem;
   }
 
   .modal-headline {
@@ -907,7 +915,7 @@ input:focus {
   }
 
   .modal-content {
-    margin-top: 16rem;
+    margin-top: 6rem;
   }
 
   .modal-headline h1 {
@@ -950,5 +958,43 @@ input:focus {
   .modal-right {
     margin-left: 1rem;
     width: 40%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .header {
+    height: 6rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .work-info p {
+    font-size: 1.125rem;
+  }
+
+  .introduction {
+    margin-left: 12rem;
+  }
+
+  .work-description {
+    font-size: 1.2rem;
+  }
+
+  .shapes::before {
+    top: 10%;
+  }
+
+  .contact {
+    width: 60%;
+  }
+
+  .work-card {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .contact {
+    width: 50%;
   }
 }
