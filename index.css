@@ -245,7 +245,8 @@ a:active {
   justify-content: start;
   width: 100%;
   margin: 0.5rem 0;
-  height: 2.5rem;
+  height: auto;
+  flex-wrap: wrap;
 }
 
 .about-headline {
@@ -531,6 +532,129 @@ input:focus {
   font-weight: 300;
 }
 
+.modal {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.5rem);
+  z-index: 9;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.open-modal {
+  pointer-events: all;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #dfe1e6;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.modal-headline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.modal-headline h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.modal-content hr {
+  width: 100%;
+  border: 1px solid #ebecf0;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.modal-btn {
+  margin: 0 0.5rem 0;
+}
+
+.modal-buttons span {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem 0;
+}
+
+.modal-button-img {
+  margin-left: 0.5rem;
+}
+
+.modal-img {
+  width: 100%;
+}
+
+.closebtn-modal {
+  font-size: 2rem;
+  color: #000;
+  font-weight: 300;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.work-info-title-modal {
+  font-weight: 400;
+  font-size: 0.813rem;
+  line-height: 1rem;
+}
+
+.work-info-sub-modal {
+  font-weight: 400;
+  font-size: 0.813rem;
+  line-height: 1rem;
+}
+
+.display-none {
+  display: none;
+}
+
 @media only screen and (min-width: 768px) {
   .header {
     height: 6rem;
@@ -766,5 +890,65 @@ input:focus {
     background-image: url("assets/headline-background.svg");
     top: 10%;
     z-index: 1;
+  }
+
+  .modal {
+    padding: 4rem 6rem;
+    max-height: 100vh;
+    overflow-y: scroll;
+  }
+
+  .modal-headline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  .modal-content {
+    margin-top: 16rem;
+  }
+
+  .modal-headline h1 {
+    font-size: 2.5rem;
+  }
+
+  .modal-img {
+    width: auto;
+    align-self: center;
+  }
+
+  .closebtn-modal {
+    font-size: 2.5rem;
+    margin-right: 3rem;
+  }
+
+  .work-info-title-modal {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+
+  .work-info-sub-modal {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+
+  .modal-div-content {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+  }
+
+  .modal-div-content > p {
+    margin-right: 1rem;
+    width: 60%;
+  }
+
+  .modal-right {
+    margin-left: 1rem;
+    width: 40%;
   }
 }
