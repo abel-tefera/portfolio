@@ -253,6 +253,32 @@ const closeMobileMenu = () => {
   }, 500);
 };
 
+const accordionEL = document.querySelectorAll(".accordion");
+const panels = document.querySelectorAll(".panel");
+
+const handleAccordion = (accordion) => {
+  const sibling = accordion.nextElementSibling;
+
+  panels.forEach((panel) => {
+    if (panel == sibling) {
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    } else {
+      panel.style.maxHeight = null;
+    }
+  });
+};
+
+accordionEL.forEach((acc) => {
+  acc.addEventListener("click", () => {
+    console.log("CLICKED");
+    handleAccordion(acc);
+  });
+});
+
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll(".links");
 

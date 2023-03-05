@@ -663,6 +663,21 @@ input:focus {
   display: none;
 }
 
+.accordion {
+  transition: 0.4s;
+  padding: 0 1rem;
+}
+
+.accordion-active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  max-height: 0;
+}
+
 @media only screen and (min-width: 768px) {
   .header {
     height: 4rem;
