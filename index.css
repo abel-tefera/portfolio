@@ -177,12 +177,22 @@ a:active {
   color: rgba(37, 56, 88, 1);
 }
 
-.language-list-item img {
-  padding: 0.5rem;
+.language-list-item li {
+  flex: 33.3%;
+  background-color: #f7f7f9;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 1rem;
 }
 
-.language-list-item li img {
+.language-list-item img {
   padding: 0.5rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .social-links img:hover {
@@ -233,10 +243,6 @@ a:active {
   color: #344563;
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.rotate-arrow {
-  transform: rotate(-90deg);
 }
 
 .work-tags-div {
@@ -474,16 +480,6 @@ input:focus {
   width: 100%;
 }
 
-.language-list-item li {
-  background-color: #f7f7f9;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  width: 100%;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
-
 .mobile-overlay {
   height: 0;
   width: 0;
@@ -678,6 +674,14 @@ input:focus {
   max-height: 0;
 }
 
+.accordion-icon {
+  transition:  transform 0.2s;
+}
+
+.accordion-icon-open {
+  transform: rotate(-90deg);
+}
+
 @media only screen and (min-width: 768px) {
   .header {
     height: 4rem;
@@ -841,6 +845,10 @@ input:focus {
   .language-list-item {
     display: flex;
     flex-direction: row;
+  }
+
+  .languages p {
+    text-align: center;
   }
 
   .btn:hover {

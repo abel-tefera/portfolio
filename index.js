@@ -88,7 +88,7 @@ const openModal = (id) => {
   modal.classList.add("open-modal");
   modalOverlay.classList.add("open-modal");
 
-  document.body.style.overflow = "hidden";
+  // document.body.style.overflow = "hidden";
 };
 
 const closeModal = function () {
@@ -255,16 +255,36 @@ const closeMobileMenu = () => {
 
 const accordionEL = document.querySelectorAll(".accordion");
 const panels = document.querySelectorAll(".panel");
+const defaultAccordion = document.querySelector(".accordion-default");
+
+const rotateArrowRight = (icon) => {
+  icon[0].classList.add("accordion-icon-open");
+};
+
+const rotateArrowUp = (icon) => {
+  icon[0].classList.remove("accordion-icon-open");
+};
 
 const handleAccordion = (accordion) => {
   const sibling = accordion.nextElementSibling;
+  const icon = accordion.getElementsByTagName("img");
+
+  accordionEL.forEach((acc) => {
+    const otherIcon = acc.getElementsByTagName("img");
+
+    if (acc !== accordion) {
+      rotateArrowUp(otherIcon)
+    }
+  });
 
   panels.forEach((panel) => {
     if (panel == sibling) {
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
+        rotateArrowUp(icon)
       } else {
         panel.style.maxHeight = panel.scrollHeight + "px";
+        rotateArrowRight(icon)
       }
     } else {
       panel.style.maxHeight = null;
@@ -273,8 +293,14 @@ const handleAccordion = (accordion) => {
 };
 
 accordionEL.forEach((acc) => {
+  if (acc == defaultAccordion) {
+    const sibling = acc.nextElementSibling;
+    const icon = acc.getElementsByTagName("img");
+    rotateArrowRight(icon);
+    sibling.style.maxHeight = sibling.scrollHeight + "px";
+  }
+
   acc.addEventListener("click", () => {
-    console.log("CLICKED");
     handleAccordion(acc);
   });
 });
