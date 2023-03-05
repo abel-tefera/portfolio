@@ -7,6 +7,8 @@ const workData = [
     sign-ups required.`,
     tags: ["html", "css", "javascript"],
     imgSrc: "assets/portfolio-1.svg",
+    sourceLink: "https://github.com/abel-tefera/portfolio",
+    demoLink: "https://abel-tefera.github.io/",
   },
   {
     headline: "Multi-Post Stories",
@@ -16,6 +18,8 @@ const workData = [
     friends.`,
     tags: ["html", "Ruby on rails", "css", "javascript"],
     imgSrc: "assets/portfolio-2.svg",
+    sourceLink: "https://github.com/abel-tefera/portfolio",
+    demoLink: "https://abel-tefera.github.io/",
   },
   {
     headline: "Facebook 360",
@@ -23,8 +27,23 @@ const workData = [
     description: `Exploring the future of media in Facebook's first Virtual Reality
     app; a place to discover and enjoy 360 photos and videos on Gear
     VR.`,
-    tags: ["html", "Ruby on rails", "css", "javascript"],
+    tags: [
+      "html",
+      "Ruby on rails",
+      "css",
+      "javascript",
+      "c#",
+      "c",
+      "python",
+      "react",
+      "ionic",
+      "flutter",
+      "django",
+      "node.js",
+    ],
     imgSrc: "assets/portfolio-3.svg",
+    sourceLink: "https://github.com/abel-tefera/portfolio",
+    demoLink: "https://abel-tefera.github.io/",
   },
 
   {
@@ -34,8 +53,59 @@ const workData = [
     unlocking your most expensive computer: your car.`,
     tags: ["html", "Ruby on rails", "css", "javascript"],
     imgSrc: "assets/portfolio-5.svg",
+    sourceLink: "https://github.com/abel-tefera/portfolio",
+    demoLink: "https://abel-tefera.github.io/",
   },
 ];
+
+const modal = document.querySelector(".modal");
+
+const modalOverlay = document.querySelector(".modal-overlay");
+
+modal.classList.remove("display-none");
+modalOverlay.classList.remove("display-none");
+
+const openModal = (id) => {
+  const work = workData[id - 1];
+  const {
+    headline,
+    subtitles,
+    description,
+    tags,
+    imgSrc,
+    sourceLink,
+    demoLink,
+  } = work;
+
+  const workModal = document.createElement("div");
+
+  const modalContainer = document.querySelector(".modal");
+  modalContainer.appendChild(workModal);
+
+  modal.classList.remove("hidden");
+  modalOverlay.classList.remove("hidden");
+
+  modal.classList.add("open-modal");
+  modalOverlay.classList.add("open-modal");
+
+  document.body.style.overflow = "hidden";
+};
+
+const closeModal = function () {
+  const modalContainer = document.querySelector(".modal");
+
+  modal.classList.remove("open-modal");
+  modalOverlay.classList.remove("open-modal");
+
+  setTimeout(() => (modalContainer.innerHTML = ""), 500);
+
+  modal.classList.add("hidden");
+  modalOverlay.classList.add("hidden");
+
+  document.body.style.overflow = "scroll";
+};
+
+modalOverlay.addEventListener("click", closeModal);
 
 class workCard extends HTMLElement {
   connectedCallback() {
@@ -43,8 +113,9 @@ class workCard extends HTMLElement {
       this.attributes;
     const tagsArr = tags.value.split(",");
     const subtitlesArr = subtitles.value.split(",");
+    const id = parseInt(i.value);
 
-    const reverse = parseInt(i.value) % 2 === 0 ? "work-card-reversed" : "";
+    const reverse = id % 2 === 0 ? "work-card-reversed" : "";
 
     const tagsLi = tagsArr
       .map(
@@ -71,13 +142,81 @@ class workCard extends HTMLElement {
         <ul class="work-tags-div disable-default">
         ${tagsLi}
         </ul>
-      <button outlined class="btn work-button">See Project</button>
+      <button outlined class="btn work-button" onclick="openModal(${id})">See Project</button>
+    </div>
+  </div>`;
+  }
+}
+
+class workModal extends HTMLElement {
+  connectedCallback() {
+    const {
+      i,
+      headline,
+      subtitles,
+      description,
+      tags,
+      imgSrc,
+      sourceLink,
+      demoLink,
+    } = this.attributes;
+
+    const tagsArr = tags.value.split(",");
+    const subtitlesArr = subtitles.value.split(",");
+    const id = parseInt(i.value);
+
+    const tagsLi = tagsArr
+      .map(
+        (tag) => `<li>
+    <p class="work-tags">${tag}</p>
+  </li>`
+      )
+      .join("");
+
+    this.innerHTML = `<div class="modal-content">
+    <div class="modal-headline">
+    <h1>${headline.value}</h1>
+    <a href="javascript:void(0)" class="closebtn-modal" onclick="closeModal()"
+    >&times;</a>
+    </div>
+    <ul class="work-info disable-default">
+      <li><p class="work-info-title work-info-title-modal">${subtitlesArr[0]}</p></li>
+      <li class="grey-dot"></li>
+      <li>
+        <p class="work-info-sub work-info-sub-modal">${subtitlesArr[1]}</p>
+      </li>
+      <li class="grey-dot"></li>
+      <li><p class="work-info-sub work-info-sub-modal">${subtitlesArr[2]}</p></li>
+    </ul>
+    <img
+      alt="${headline.value}"
+      class="modal-img"
+      src="${imgSrc.value}"
+    />
+    <div class="modal-div-content">
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum sunt
+        fugiat illum adipisci harum consequatur cupiditate quod, nisi nam
+        iusto suscipit, modi voluptatum totam. Iusto placeat perferendis
+        corporis perspiciatis deserunt?
+      </p>
+      <div class="modal-right">
+        <ul class="work-tags-div disable-default">
+          ${tagsLi}
+        </ul>
+        <hr />
+        <div class="modal-buttons">
+          <a class="btn modal-btn" href="${demoLink.value}"><span>See Live <img src="assets/live.svg" class="modal-button-img"/></span></a>
+          <a class="btn modal-btn" href="${sourceLink.value}"><span>See Source <img src="assets/github-2.svg" class="modal-button-img"/></span></a>
+        </div>
+      </div>
     </div>
   </div>`;
   }
 }
 
 customElements.define("work-card", workCard);
+customElements.define("work-modal", workModal);
 
 const main = () => {
   for (const [i, work] of workData.entries()) {
