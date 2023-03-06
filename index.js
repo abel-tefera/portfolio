@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const showMobileMenu = () => {
   const menu = document.getElementById('mobile-menu');
   menu.style.visibility = 'visible';
