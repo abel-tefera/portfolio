@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const showMobileMenu = () => {
   const menu = document.getElementById('mobile-menu');
   menu.style.visibility = 'visible';
@@ -14,6 +12,12 @@ const closeMobileMenu = () => {
     menu.style.visibility = 'hidden';
   }, 500);
 };
+
+const openMenu = document.getElementById('open-menu');
+openMenu.addEventListener('click', showMobileMenu);
+
+const closeMenu = document.getElementById('close-menu');
+closeMenu.addEventListener('click', closeMobileMenu);
 
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.links');
