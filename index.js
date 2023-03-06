@@ -253,25 +253,28 @@ const closeMobileMenu = () => {
   }, 500);
 };
 
-let sections = document.querySelectorAll("section");
-let navLinks = document.querySelectorAll(".links");
+const openMenu = document.getElementById("open-menu");
+openMenu.addEventListener("click", showMobileMenu);
+
+const closeMenu = document.getElementById("close-menu");
+closeMenu.addEventListener("click", closeMobileMenu);
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".links");
 
 window.onscroll = () => {
   sections.forEach((sec) => {
-    let top = window.scrollY;
-    let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight;
-    let id = sec.getAttribute("id");
+    const top = window.scrollY;
+    const offset = sec.offsetTop - 150;
+    const height = sec.offsetHeight;
+    const id = sec.getAttribute("id");
 
     if (top >= offset && top < offset + height) {
       navLinks.forEach((links) => {
         links.classList.remove("active");
-        const linkHtml = document.querySelector(
-          ".links-container a[href*=" + id + "]"
-        );
-        if (linkHtml) {
-          linkHtml.classList.add("active");
-        }
+        document
+          .querySelector(".links-container a[href*=" + id + "]")
+          .classList.add("active");
       });
     }
   });

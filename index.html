@@ -10,7 +10,7 @@
   <body>
     <header class="header">
       <a class="logo" class="disable-default" href="#">Abel Tefera</a>
-      <nav class="hamburger" onclick="showMobileMenu()">
+      <nav class="hamburger" id="open-menu">
         <img alt="menu" src="assets/hamburger.svg" width="30" />
       </nav>
       <div class="links-container">
@@ -21,7 +21,7 @@
     </header>
     <div class="shapes"></div>
     <div class="mobile-overlay" id="mobile-menu">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeMobileMenu()"
+      <a href="javascript:void(0)" class="closebtn" id="close-menu"
         >&times;</a
       >
       <div class="overlay-content">
