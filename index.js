@@ -1,5 +1,12 @@
 /* eslint-disable */
 
+const showMobileMenu = () => {
+  const menu = document.getElementById("mobile-menu");
+  menu.style.visibility = "visible";
+  menu.style.height = "100%";
+  menu.style.width = "100%";
+};
+
 const closeMobileMenu = () => {
   const menu = document.getElementById("mobile-menu");
   menu.style.height = "0";
