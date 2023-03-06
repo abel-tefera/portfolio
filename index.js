@@ -42,7 +42,6 @@ const workData = [
     sourceLink: 'https://github.com/abel-tefera/portfolio',
     demoLink: 'https://abel-tefera.github.io/',
   },
-
   {
     headline: 'Uber Navigation',
     subtitles: ['Uber', 'Lead Developer', 2018],
@@ -63,7 +62,7 @@ modal.classList.remove('display-none');
 modalOverlay.classList.remove('display-none');
 
 const workModalMarkup = (id) => {
-  const work = workData[id - 1];
+  const work = workData[id];
 
   const {
     headline,
@@ -83,7 +82,7 @@ const workModalMarkup = (id) => {
   imgSrc='${imgSrc}'
   sourceLink='${sourceLink}'
   demoLink='${demoLink}'
-  i='${id + 1}'
+  i='${id}'
   ></work-modal>`;
 };
 
@@ -122,16 +121,46 @@ const closeModal = function() {
 modalOverlay.addEventListener('click', closeModal);
 
 const projectPrev = (idx) => {
-  if (idx > 1) {
-    const workModal = document.getElementById('work-modal');
-    workModal.innerHTML = workModalMarkup(idx - 2);
+  const index = parseInt(idx);
+
+  if (index === 0) {
+    return;
+  }
+
+  const prevBtn = document.querySelector('#modal-prev');
+  const nextBtn = document.querySelector('#modal-prev');
+
+  if (index == 1) {
+    prevBtn.disabled = true;
+  }
+
+  const workModal = document.getElementById('work-modal');
+  workModal.innerHTML = workModalMarkup(index - 1);
+
+  if (nextBtn.disabled === true) {
+    nextBtn.disabled = false;
   }
 };
 
 const projectNext = (idx) => {
-  if (idx <= workData.length) {
-    const workModal = document.getElementById('work-modal');
-    workModal.innerHTML = workModalMarkup(idx);
+  const index = parseInt(idx);
+
+  if (index === workData.length - 1) {
+    return;
+  }
+
+  const prevBtn = document.querySelector('#modal-prev');
+  const nextBtn = document.querySelector('#modal-prev');
+
+  if (index == workData.length - 2) {
+    nextBtn.disabled = true;
+  }
+
+  const workModal = document.getElementById('work-modal');
+  workModal.innerHTML = workModalMarkup(index + 1);
+
+  if (prevBtn.disabled === true) {
+    prevBtn.disabled = false;
   }
 };
 
@@ -221,15 +250,15 @@ class workModal extends HTMLElement {
       ${subtitlesArr[2]}</p></li>
     </ul>
     <div class="modal-div-flex">
-      <button class="circle-btn modal-prev" onclick="projectPrev(${id})">
-      <img src="assets/drop-icon-down.svg" /></button>
+      <button class="circle-btn" id="modal-prev" onclick="projectPrev(${id})">
+      <img class="modal-icon" src="assets/drop-icon-down.svg" /></button>
       <img
         alt="${headline.value}"
         class="modal-img"
         src="${imgSrc.value}"
       />
-      <button class="circle-btn modal-next" onclick="projectNext(${id})">
-      <img src="assets/drop-icon-down.svg" /></button>
+      <button class="circle-btn" id="modal-next" onclick="projectNext(${id})">
+      <img class="modal-icon" src="assets/drop-icon-down.svg" /></button>
     </div>
     <div class="modal-div-content">
       <p>
@@ -272,7 +301,7 @@ const main = () => {
     description='${description}'
     tags='${tags}'
     imgSrc='${imgSrc}'
-    i='${i + 1}'
+    i='${i}'
     ></work-card>`;
 
     const workContainer = document.querySelector('.work-container');
@@ -368,9 +397,12 @@ window.onscroll = () => {
     if (top >= offset && top < offset + height) {
       navLinks.forEach((links) => {
         links.classList.remove('active');
-        document
-            .querySelector('.links-container a[href*=' + id + ']')
-            .classList.add('active');
+        const targetLink = document.querySelector(
+            '.links-container a[href*=' + id + ']',
+        );
+        if (targetLink) {
+          targetLink.classList.add('active');
+        }
       });
     }
   });

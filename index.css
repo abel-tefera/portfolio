@@ -681,36 +681,8 @@ input:focus {
   transform: rotate(-90deg);
 }
 
-.modal-div-flex {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
 .circle-btn {
-  height: 3rem;
-  width: 3rem;
-  border-radius: 50%;
-  border: 1px solid #ccc;
-  align-self: center;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.circle-btn:hover,
-.circle-btn:active {
-  background-color: #ccc;
-  cursor: pointer;
-}
-
-.modal-prev img {
-  transform: rotate(90deg);
-}
-
-.modal-next img {
-  transform: rotate(-90deg);
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1012,6 +984,38 @@ input:focus {
   .modal-right {
     margin-left: 1rem;
     width: 40%;
+  }
+
+  .modal-div-flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .circle-btn {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    align-self: center;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .circle-btn:hover,
+  .circle-btn:active {
+    background-color: #ccc;
+    cursor: pointer;
+  }
+  
+  #modal-prev .modal-icon {
+    transform: rotate(90deg);
+  }
+  
+  #modal-next .modal-icon {
+    transform: rotate(-90deg);
   }
 }
 
