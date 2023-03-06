@@ -34,19 +34,14 @@ const workData = [
       'css',
       'javascript',
       'c#',
-      'c',
       'python',
       'react',
-      'ionic',
-      'flutter',
-      'django',
       'node.js',
     ],
     imgSrc: 'assets/portfolio-3.svg',
     sourceLink: 'https://github.com/abel-tefera/portfolio',
     demoLink: 'https://abel-tefera.github.io/',
   },
-
   {
     headline: 'Uber Navigation',
     subtitles: ['Uber', 'Lead Developer', 2018],
@@ -66,8 +61,9 @@ const modalOverlay = document.querySelector('.modal-overlay');
 modal.classList.remove('display-none');
 modalOverlay.classList.remove('display-none');
 
-const openModal = (id) => {
-  const work = workData[id - 1];
+const workModalMarkup = (id) => {
+  const work = workData[id];
+
   const {
     headline,
     subtitles,
@@ -78,9 +74,7 @@ const openModal = (id) => {
     demoLink,
   } = work;
 
-  const workModal = document.createElement('div');
-
-  workModal.innerHTML = `<work-modal
+  return `<work-modal
   headline='${headline}'
   subtitles='${subtitles}'
   description='${description}'
@@ -88,8 +82,15 @@ const openModal = (id) => {
   imgSrc='${imgSrc}'
   sourceLink='${sourceLink}'
   demoLink='${demoLink}'
-  i='${id + 1}'
+  i='${id}'
   ></work-modal>`;
+};
+
+const openModal = (id) => {
+  const workModal = document.createElement('div');
+  workModal.setAttribute('id', 'work-modal');
+
+  workModal.innerHTML = workModalMarkup(id);
 
   const modalContainer = document.querySelector('.modal');
   modalContainer.appendChild(workModal);
@@ -118,6 +119,50 @@ const closeModal = function() {
 };
 
 modalOverlay.addEventListener('click', closeModal);
+
+const projectPrev = (idx) => {
+  const index = parseInt(idx);
+
+  if (index === 0) {
+    return;
+  }
+
+  const prevBtn = document.querySelector('#modal-prev');
+  const nextBtn = document.querySelector('#modal-prev');
+
+  if (index == 1) {
+    prevBtn.disabled = true;
+  }
+
+  const workModal = document.getElementById('work-modal');
+  workModal.innerHTML = workModalMarkup(index - 1);
+
+  if (nextBtn.disabled === true) {
+    nextBtn.disabled = false;
+  }
+};
+
+const projectNext = (idx) => {
+  const index = parseInt(idx);
+
+  if (index === workData.length - 1) {
+    return;
+  }
+
+  const prevBtn = document.querySelector('#modal-prev');
+  const nextBtn = document.querySelector('#modal-prev');
+
+  if (index == workData.length - 2) {
+    nextBtn.disabled = true;
+  }
+
+  const workModal = document.getElementById('work-modal');
+  workModal.innerHTML = workModalMarkup(index + 1);
+
+  if (prevBtn.disabled === true) {
+    prevBtn.disabled = false;
+  }
+};
 
 class workCard extends HTMLElement {
   connectedCallback() {
@@ -204,11 +249,17 @@ class workModal extends HTMLElement {
       <li><p class="work-info-sub work-info-sub-modal">
       ${subtitlesArr[2]}</p></li>
     </ul>
-    <img
-      alt="${headline.value}"
-      class="modal-img"
-      src="${imgSrc.value}"
-    />
+    <div class="modal-div-flex">
+      <button class="circle-btn" id="modal-prev" onclick="projectPrev(${id})">
+      <img class="modal-icon" src="assets/drop-icon-down.svg" /></button>
+      <img
+        alt="${headline.value}"
+        class="modal-img"
+        src="${imgSrc.value}"
+      />
+      <button class="circle-btn" id="modal-next" onclick="projectNext(${id})">
+      <img class="modal-icon" src="assets/drop-icon-down.svg" /></button>
+    </div>
     <div class="modal-div-content">
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum sunt
@@ -250,7 +301,7 @@ const main = () => {
     description='${description}'
     tags='${tags}'
     imgSrc='${imgSrc}'
-    i='${i + 1}'
+    i='${i}'
     ></work-card>`;
 
     const workContainer = document.querySelector('.work-container');
@@ -275,6 +326,58 @@ const closeMobileMenu = () => {
   }, 500);
 };
 
+const accordionEL = document.querySelectorAll('.accordion');
+const panels = document.querySelectorAll('.panel');
+const defaultAccordion = document.querySelector('.accordion-default');
+
+const rotateArrowRight = (icon) => {
+  icon[0].classList.add('accordion-icon-open');
+};
+
+const rotateArrowUp = (icon) => {
+  icon[0].classList.remove('accordion-icon-open');
+};
+
+const handleAccordion = (accordion) => {
+  const sibling = accordion.nextElementSibling;
+  const icon = accordion.getElementsByTagName('img');
+
+  accordionEL.forEach((acc) => {
+    const otherIcon = acc.getElementsByTagName('img');
+
+    if (acc !== accordion) {
+      rotateArrowUp(otherIcon);
+    }
+  });
+
+  panels.forEach((panel) => {
+    if (panel == sibling) {
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+        rotateArrowUp(icon);
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        rotateArrowRight(icon);
+      }
+    } else {
+      panel.style.maxHeight = null;
+    }
+  });
+};
+
+accordionEL.forEach((acc) => {
+  if (acc == defaultAccordion) {
+    const sibling = acc.nextElementSibling;
+    const icon = acc.getElementsByTagName('img');
+    rotateArrowRight(icon);
+    sibling.style.maxHeight = sibling.scrollHeight + 'px';
+  }
+
+  acc.addEventListener('click', () => {
+    handleAccordion(acc);
+  });
+});
+
 const openMenu = document.getElementById('open-menu');
 openMenu.addEventListener('click', showMobileMenu);
 
@@ -294,9 +397,12 @@ window.onscroll = () => {
     if (top >= offset && top < offset + height) {
       navLinks.forEach((links) => {
         links.classList.remove('active');
-        document
-            .querySelector('.links-container a[href*=' + id + ']')
-            .classList.add('active');
+        const targetLink = document.querySelector(
+            '.links-container a[href*=' + id + ']',
+        );
+        if (targetLink) {
+          targetLink.classList.add('active');
+        }
       });
     }
   });
