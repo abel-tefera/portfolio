@@ -991,7 +991,7 @@ input:focus {
     justify-content: space-between;
     width: 100%;
   }
-  
+
   .circle-btn {
     height: 3rem;
     width: 3rem;
@@ -1003,17 +1003,17 @@ input:focus {
     align-items: center;
     justify-content: center;
   }
-  
+
   .circle-btn:hover,
   .circle-btn:active {
     background-color: #ccc;
     cursor: pointer;
   }
-  
+
   #modal-prev .modal-icon {
     transform: rotate(90deg);
   }
-  
+
   #modal-next .modal-icon {
     transform: rotate(-90deg);
   }
