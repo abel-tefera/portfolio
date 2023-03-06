@@ -78,7 +78,17 @@ const openModal = (id) => {
   } = work;
 
   const workModal = document.createElement("div");
-
+  workModal.innerHTML = `<work-modal
+  headline='${headline}'
+  subtitles='${subtitles}'
+  description='${description}'
+  tags='${tags}'
+  imgSrc='${imgSrc}'
+  sourceLink='${sourceLink}'
+  demoLink='${demoLink}'
+  i='${id + 1}'
+  ></work-modal>`;
+  
   const modalContainer = document.querySelector(".modal");
   modalContainer.appendChild(workModal);
 
