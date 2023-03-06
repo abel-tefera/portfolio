@@ -10,16 +10,26 @@
   <body>
     <header class="header">
       <a class="logo" class="disable-default" href="#">Abel Tefera</a>
-      <nav class="hamburger">
+      <nav class="hamburger" id="open-menu">
         <img alt="menu" src="assets/hamburger.svg" width="30" />
       </nav>
       <div class="links-container">
-        <a class="links" href="#">Portfolio</a>
-        <a class="links" href="#">About</a>
-        <a class="links" href="#">Contact</a>
+        <a class="links" href="#portfolio">Portfolio</a>
+        <a class="links" href="#about">About</a>
+        <a class="links" href="#contact">Contact</a>
       </div>
     </header>
     <div class="shapes"></div>
+    <div class="mobile-overlay" id="mobile-menu">
+      <a href="javascript:void(0)" class="closebtn" id="close-menu"
+        >&times;</a
+      >
+      <div class="overlay-content">
+        <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
+        <a href="#about" onclick="closeMobileMenu()">About</a>
+        <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+      </div>
+    </div>
     <section class="container left-right-margin">
       <div class="introduction">
         <h1 class="headline">I'm Abel <br />Glad to see you!</h1>
@@ -60,7 +70,7 @@
         </ul>
       </div>
     </section>
-    <section class="grey-container">
+    <section class="grey-container" id="portfolio">
       <div class="work-container">
         <div class="work-card">
           <img alt="Tonic" class="work-img" src="assets/portfolio-1.svg" />
@@ -92,7 +102,11 @@
           </div>
         </div>
         <div class="work-card work-card-reversed">
-          <img alt="Multi-Post Stories" class="work-img" src="assets/portfolio-2.svg" />
+          <img
+            alt="Multi-Post Stories"
+            class="work-img"
+            src="assets/portfolio-2.svg"
+          />
           <div class="work-content">
             <h1 class="work-headline">Multi-Post Stories</h1>
             <ul class="work-info disable-default">
@@ -125,7 +139,11 @@
           </div>
         </div>
         <div class="work-card">
-          <img alt="Facebook 360" class="work-img" src="assets/portfolio-3.svg" />
+          <img
+            alt="Facebook 360"
+            class="work-img"
+            src="assets/portfolio-3.svg"
+          />
           <div class="work-content">
             <h1 class="work-headline">Facebook 360</h1>
             <ul class="work-info disable-default">
@@ -158,7 +176,11 @@
           </div>
         </div>
         <div class="work-card work-card-reversed">
-          <img alt="Uber Navigation" class="work-img" src="assets/portfolio-5.svg" />
+          <img
+            alt="Uber Navigation"
+            class="work-img"
+            src="assets/portfolio-5.svg"
+          />
           <div class="work-content">
             <h1 class="work-headline">Uber Navigation</h1>
             <ul class="work-info disable-default">
@@ -191,7 +213,7 @@
         </div>
       </div>
     </section>
-    <section class="container top-right-curved">
+    <section class="container top-right-curved" id="about">
       <div class="about left-right-margin">
         <div class="about-myself">
           <h1 class="about-headline">
@@ -249,19 +271,25 @@
           <li>
             <span class="language-span"
               ><p>Frameworks</p>
-              <img alt="drop-down-menu" class="rotate-arrow" src="assets/drop-icon-down.svg"
+              <img
+                alt="drop-down-menu"
+                class="rotate-arrow"
+                src="assets/drop-icon-down.svg"
             /></span>
           </li>
           <li>
             <span class="language-span"
               ><p>Skills</p>
-              <img alt="drop-down-menu" class="rotate-arrow" src="assets/drop-icon-down.svg"
+              <img
+                alt="drop-down-menu"
+                class="rotate-arrow"
+                src="assets/drop-icon-down.svg"
             /></span>
           </li>
         </ul>
       </div>
     </section>
-    <section class="contact-container">
+    <section class="contact-container" id="contact">
       <div class="contact left-right-margin">
         <h1>Contact me</h1>
         <p>
@@ -275,7 +303,7 @@
           action="https://formspree.io/f/mqkoqbre"
           method="post"
         >
-          <label for="name" title="Name"></label> 
+          <label for="name" title="Name"></label>
           <input
             name="name"
             type="text"
@@ -284,9 +312,15 @@
             required
             title="Name"
           />
-          <label for="email" >Email</label> 
-          <input name="email" type="email" placeholder="email" required title="Email"/>
-          <label for="message">Message</label> 
+          <label for="email">Email</label>
+          <input
+            name="email"
+            type="email"
+            placeholder="email"
+            required
+            title="Email"
+          />
+          <label for="message">Message</label>
           <textarea
             name="message"
             rows="6"
@@ -301,5 +335,7 @@
         </form>
       </div>
     </section>
+
+    <script src="index.js" type="text/javascript"></script>
   </body>
 </html>

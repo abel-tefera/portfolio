@@ -3,6 +3,10 @@
 /* stylelint-disable alpha-value-notation */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:300,400,500,700&display=swap");
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Poppins, sans-serif;
   font-style: normal;
@@ -24,8 +28,8 @@ a:active {
 }
 
 .btn {
-  border: 1px solid #142cff;
-  color: #142cff;
+  border: 1px solid #6070ff;
+  color: #6070ff;
   border-radius: 0.5rem;
   width: fit-content;
   background: white;
@@ -40,7 +44,7 @@ a:active {
 }
 
 .btn:hover {
-  background: #142cff;
+  background: #6070ff;
   box-shadow: 0 0.5rem 1rem rgba(64, 83, 252, 0.24);
   color: #fff;
   cursor: pointer;
@@ -92,7 +96,7 @@ a:active {
 }
 
 .hamburger img {
-  color: #142cff;
+  color: #6070ff;
 }
 
 .container {
@@ -190,7 +194,7 @@ a:active {
   height: 1.25rem;
   font-weight: 700;
   font-size: 1.125rem;
-  color: #142cff;
+  color: #6070ff;
   line-height: 1.25rem;
   cursor: pointer;
 }
@@ -267,7 +271,7 @@ a:active {
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.03em;
-  color: #142cff;
+  color: #6070ff;
   background-color: #ebebff;
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   border-radius: 0.5rem;
@@ -291,7 +295,6 @@ ul {
 }
 
 .languages p {
-  border: 1px 1px 0 0 solid;
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.5rem;
@@ -359,7 +362,7 @@ ul {
 .contact-container::before {
   content: "";
   position: absolute;
-  background-color: #142cff;
+  background-color: #6070ff;
   background-image: url("assets/contact-form-shapes-mobile.svg");
   background-size: contain;
   background-position: right;
@@ -433,7 +436,7 @@ input:focus {
 
 .contact-form > button:hover {
   background: #fff;
-  color: #142cff;
+  color: #6070ff;
   box-shadow: 0 0.5rem 1rem rgba(64, 83, 252, 0.24);
   cursor: pointer;
 }
@@ -479,6 +482,54 @@ input:focus {
   align-items: center;
 }
 
+.mobile-overlay {
+  height: 0;
+  width: 0;
+  position: fixed;
+  background-color: hsla(234deg, 100%, 55%, 0.7);
+  z-index: 10;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  transition: height 0.5s;
+  backdrop-filter: blur(0.5rem);
+}
+
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.overlay-content a {
+  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 2.75rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.mobile-overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.closebtn {
+  position: absolute;
+  top: 3%;
+  right: 0;
+  margin-right: 3rem;
+  font-size: 3.75rem;
+  color: #fff;
+  font-weight: 300;
+}
+
 @media only screen and (min-width: 768px) {
   .header {
     height: 6rem;
@@ -492,7 +543,7 @@ input:focus {
     height: 1.25rem;
     font-weight: 700;
     font-size: 1.5rem;
-    color: #142cff;
+    color: #6070ff;
     transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
   }
 
@@ -511,13 +562,10 @@ input:focus {
     transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
   }
 
-  .links:hover {
+  .links:hover,
+  .links-container .active {
     color: #396df2;
     font-size: 1.5rem;
-  }
-
-  .links:focus {
-    color: #396df2;
   }
 
   .headline {
@@ -654,7 +702,7 @@ input:focus {
     cursor: pointer;
     background: inherit;
     box-shadow: none;
-    color: #142cff;
+    color: #6070ff;
   }
 
   .btn-inverse:hover {
@@ -670,7 +718,7 @@ input:focus {
 
   @keyframes btn-hover {
     100% {
-      box-shadow: inset 11rem 0 0 0 #142cff, 0 8px 16px rgba(64, 83, 252, 0.24);
+      box-shadow: inset 11rem 0 0 0 #6070ff, 0 8px 16px rgba(64, 83, 252, 0.24);
       color: #fff;
     }
   }
