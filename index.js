@@ -61,8 +61,9 @@ const modalOverlay = document.querySelector(".modal-overlay");
 modal.classList.remove("display-none");
 modalOverlay.classList.remove("display-none");
 
-const openModal = (id) => {
+const workModalMarkup = (id) => {
   const work = workData[id - 1];
+
   const {
     headline,
     subtitles,
@@ -73,9 +74,7 @@ const openModal = (id) => {
     demoLink,
   } = work;
 
-  const workModal = document.createElement("div");
-
-  workModal.innerHTML = `<work-modal
+  return `<work-modal
   headline='${headline}'
   subtitles='${subtitles}'
   description='${description}'
@@ -85,6 +84,13 @@ const openModal = (id) => {
   demoLink='${demoLink}'
   i='${id + 1}'
   ></work-modal>`;
+};
+
+const openModal = (id) => {
+  const workModal = document.createElement("div");
+  workModal.setAttribute("id", "work-modal");
+
+  workModal.innerHTML = workModalMarkup(id);
 
   const modalContainer = document.querySelector(".modal");
   modalContainer.appendChild(workModal);
@@ -113,6 +119,20 @@ const closeModal = function () {
 };
 
 modalOverlay.addEventListener("click", closeModal);
+
+const projectPrev = (idx) => {
+  if (idx > 1) {
+    const workModal = document.getElementById("work-modal");
+    workModal.innerHTML = workModalMarkup(idx - 2);
+  }
+};
+
+const projectNext = (idx) => {
+  if (idx <= workData.length) {
+    const workModal = document.getElementById("work-modal");
+    workModal.innerHTML = workModalMarkup(idx);
+  }
+};
 
 class workCard extends HTMLElement {
   connectedCallback() {
@@ -195,11 +215,15 @@ class workModal extends HTMLElement {
       <li class="grey-dot"></li>
       <li><p class="work-info-sub work-info-sub-modal">${subtitlesArr[2]}</p></li>
     </ul>
-    <img
-      alt="${headline.value}"
-      class="modal-img"
-      src="${imgSrc.value}"
-    />
+    <div class="modal-div-flex">
+      <button class="circle-btn modal-prev" onclick="projectPrev(${id})"><img src="assets/drop-icon-down.svg" /></button>
+      <img
+        alt="${headline.value}"
+        class="modal-img"
+        src="${imgSrc.value}"
+      />
+      <button class="circle-btn modal-next" onclick="projectNext(${id})"><img src="assets/drop-icon-down.svg" /></button>
+    </div>
     <div class="modal-div-content">
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum sunt
