@@ -1,65 +1,66 @@
-/* eslint-disable */
+/* eslint-disable require-jsdoc */
+/* eslint-disable no-unused-vars */
 const workData = [
   {
-    headline: "Tonic",
-    subtitles: ["CANOPY", "Back End Dev", 2015],
-    description: `A daily selection of privately personalized reads; no accounts or
-    sign-ups required.`,
-    tags: ["html", "css", "javascript"],
-    imgSrc: "assets/portfolio-1.svg",
-    sourceLink: "https://github.com/abel-tefera/portfolio",
-    demoLink: "https://abel-tefera.github.io/",
+    headline: 'Tonic',
+    subtitles: ['CANOPY', 'Back End Dev', 2015],
+    description: `A daily selection of privately personalized reads;
+    no accounts or sign-ups required.`,
+    tags: ['html', 'css', 'javascript'],
+    imgSrc: 'assets/portfolio-1.svg',
+    sourceLink: 'https://github.com/abel-tefera/portfolio',
+    demoLink: 'https://abel-tefera.github.io/',
   },
   {
-    headline: "Multi-Post Stories",
-    subtitles: ["FACEBOOK", "Full Stack Dev", 2015],
-    description: `Experimental content creation feature that allows users to add to
-    an existing story over the course of a day without spamming their
+    headline: 'Multi-Post Stories',
+    subtitles: ['FACEBOOK', 'Full Stack Dev', 2015],
+    description: `Experimental content creation feature that allows users 
+    to add to an existing story over the course of a day without spamming their
     friends.`,
-    tags: ["html", "Ruby on rails", "css", "javascript"],
-    imgSrc: "assets/portfolio-2.svg",
-    sourceLink: "https://github.com/abel-tefera/portfolio",
-    demoLink: "https://abel-tefera.github.io/",
+    tags: ['html', 'Ruby on rails', 'css', 'javascript'],
+    imgSrc: 'assets/portfolio-2.svg',
+    sourceLink: 'https://github.com/abel-tefera/portfolio',
+    demoLink: 'https://abel-tefera.github.io/',
   },
   {
-    headline: "Facebook 360",
-    subtitles: ["FACEBOOK", "Full Stack Dev", 2015],
-    description: `Exploring the future of media in Facebook's first Virtual Reality
-    app; a place to discover and enjoy 360 photos and videos on Gear
+    headline: 'Facebook 360',
+    subtitles: ['FACEBOOK', 'Full Stack Dev', 2015],
+    description: `Exploring the future of media in Facebook's first Virtual 
+    Reality app; a place to discover and enjoy 360 photos and videos on Gear
     VR.`,
     tags: [
-      "html",
-      "Ruby on rails",
-      "css",
-      "javascript",
-      "c#",
-      "python",
-      "react",
-      "node.js",
+      'html',
+      'Ruby on rails',
+      'css',
+      'javascript',
+      'c#',
+      'python',
+      'react',
+      'node.js',
     ],
-    imgSrc: "assets/portfolio-3.svg",
-    sourceLink: "https://github.com/abel-tefera/portfolio",
-    demoLink: "https://abel-tefera.github.io/",
+    imgSrc: 'assets/portfolio-3.svg',
+    sourceLink: 'https://github.com/abel-tefera/portfolio',
+    demoLink: 'https://abel-tefera.github.io/',
   },
 
   {
-    headline: "Uber Navigation",
-    subtitles: ["Uber", "Lead Developer", 2018],
-    description: `A smart assistant to make driving more safe, efficient, and fun by
-    unlocking your most expensive computer: your car.`,
-    tags: ["html", "Ruby on rails", "css", "javascript"],
-    imgSrc: "assets/portfolio-5.svg",
-    sourceLink: "https://github.com/abel-tefera/portfolio",
-    demoLink: "https://abel-tefera.github.io/",
+    headline: 'Uber Navigation',
+    subtitles: ['Uber', 'Lead Developer', 2018],
+    description: `A smart assistant to make driving more safe, efficient, and 
+    fun by unlocking your most expensive computer: your car.`,
+    tags: ['html', 'Ruby on rails', 'css', 'javascript'],
+    imgSrc: 'assets/portfolio-5.svg',
+    sourceLink: 'https://github.com/abel-tefera/portfolio',
+    demoLink: 'https://abel-tefera.github.io/',
   },
 ];
 
-const modal = document.querySelector(".modal");
+const modal = document.querySelector('.modal');
 
-const modalOverlay = document.querySelector(".modal-overlay");
+const modalOverlay = document.querySelector('.modal-overlay');
 
-modal.classList.remove("display-none");
-modalOverlay.classList.remove("display-none");
+modal.classList.remove('display-none');
+modalOverlay.classList.remove('display-none');
 
 const workModalMarkup = (id) => {
   const work = workData[id - 1];
@@ -87,70 +88,81 @@ const workModalMarkup = (id) => {
 };
 
 const openModal = (id) => {
-  const workModal = document.createElement("div");
-  workModal.setAttribute("id", "work-modal");
+  const workModal = document.createElement('div');
+  workModal.setAttribute('id', 'work-modal');
 
   workModal.innerHTML = workModalMarkup(id);
 
-  const modalContainer = document.querySelector(".modal");
+  workModal.innerHTML = `<work-modal
+  headline='${headline}'
+  subtitles='${subtitles}'
+  description='${description}'
+  tags='${tags}'
+  imgSrc='${imgSrc}'
+  sourceLink='${sourceLink}'
+  demoLink='${demoLink}'
+  i='${id + 1}'
+  ></work-modal>`;
+
+  const modalContainer = document.querySelector('.modal');
   modalContainer.appendChild(workModal);
 
-  modal.classList.remove("hidden");
-  modalOverlay.classList.remove("hidden");
+  modal.classList.remove('hidden');
+  modalOverlay.classList.remove('hidden');
 
-  modal.classList.add("open-modal");
-  modalOverlay.classList.add("open-modal");
+  modal.classList.add('open-modal');
+  modalOverlay.classList.add('open-modal');
 
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow = 'hidden';
 };
 
-const closeModal = function () {
-  const modalContainer = document.querySelector(".modal");
+const closeModal = function() {
+  const modalContainer = document.querySelector('.modal');
 
-  modal.classList.remove("open-modal");
-  modalOverlay.classList.remove("open-modal");
+  modal.classList.remove('open-modal');
+  modalOverlay.classList.remove('open-modal');
 
-  setTimeout(() => (modalContainer.innerHTML = ""), 500);
+  setTimeout(() => (modalContainer.innerHTML = ''), 500);
 
-  modal.classList.add("hidden");
-  modalOverlay.classList.add("hidden");
+  modal.classList.add('hidden');
+  modalOverlay.classList.add('hidden');
 
-  document.body.style.overflow = "scroll";
+  document.body.style.overflow = 'scroll';
 };
 
-modalOverlay.addEventListener("click", closeModal);
+modalOverlay.addEventListener('click', closeModal);
 
 const projectPrev = (idx) => {
   if (idx > 1) {
-    const workModal = document.getElementById("work-modal");
+    const workModal = document.getElementById('work-modal');
     workModal.innerHTML = workModalMarkup(idx - 2);
   }
 };
 
 const projectNext = (idx) => {
   if (idx <= workData.length) {
-    const workModal = document.getElementById("work-modal");
+    const workModal = document.getElementById('work-modal');
     workModal.innerHTML = workModalMarkup(idx);
   }
 };
 
 class workCard extends HTMLElement {
   connectedCallback() {
-    const { i, headline, subtitles, description, tags, imgSrc } =
+    const {i, headline, subtitles, description, tags, imgSrc} =
       this.attributes;
-    const tagsArr = tags.value.split(",");
-    const subtitlesArr = subtitles.value.split(",");
+    const tagsArr = tags.value.split(',');
+    const subtitlesArr = subtitles.value.split(',');
     const id = parseInt(i.value);
 
-    const reverse = id % 2 === 0 ? "work-card-reversed" : "";
+    const reverse = id % 2 === 0 ? 'work-card-reversed' : '';
 
     const tagsLi = tagsArr
-      .map(
-        (tag) => `<li>
+        .map(
+            (tag) => `<li>
     <p class="work-tags">${tag}</p>
-  </li>`
-      )
-      .join("");
+  </li>`,
+        )
+        .join('');
 
     this.innerHTML = `<div class="work-card ${reverse}">
       <img alt="${headline.value}" class="work-img" src="${imgSrc.value}" />
@@ -169,7 +181,8 @@ class workCard extends HTMLElement {
         <ul class="work-tags-div disable-default">
         ${tagsLi}
         </ul>
-      <button outlined class="btn work-button" onclick="openModal(${id})">See Project</button>
+      <button outlined class="btn work-button" onclick="openModal(${id})">
+      See Project</button>
     </div>
   </div>`;
   }
@@ -188,17 +201,17 @@ class workModal extends HTMLElement {
       demoLink,
     } = this.attributes;
 
-    const tagsArr = tags.value.split(",");
-    const subtitlesArr = subtitles.value.split(",");
+    const tagsArr = tags.value.split(',');
+    const subtitlesArr = subtitles.value.split(',');
     const id = parseInt(i.value);
 
     const tagsLi = tagsArr
-      .map(
-        (tag) => `<li>
+        .map(
+            (tag) => `<li>
     <p class="work-tags">${tag}</p>
-  </li>`
-      )
-      .join("");
+  </li>`,
+        )
+        .join('');
 
     this.innerHTML = `<div class="modal-content">
     <div class="modal-headline">
@@ -207,22 +220,27 @@ class workModal extends HTMLElement {
     >&times;</a>
     </div>
     <ul class="work-info disable-default">
-      <li><p class="work-info-title work-info-title-modal">${subtitlesArr[0]}</p></li>
+      <li><p class="work-info-title work-info-title-modal">
+      ${subtitlesArr[0]}</p></li>
       <li class="grey-dot"></li>
       <li>
-        <p class="work-info-sub work-info-sub-modal">${subtitlesArr[1]}</p>
+        <p class="work-info-sub work-info-sub-modal">
+        ${subtitlesArr[1]}</p>
       </li>
       <li class="grey-dot"></li>
-      <li><p class="work-info-sub work-info-sub-modal">${subtitlesArr[2]}</p></li>
+      <li><p class="work-info-sub work-info-sub-modal">
+      ${subtitlesArr[2]}</p></li>
     </ul>
     <div class="modal-div-flex">
-      <button class="circle-btn modal-prev" onclick="projectPrev(${id})"><img src="assets/drop-icon-down.svg" /></button>
+      <button class="circle-btn modal-prev" onclick="projectPrev(${id})">
+      <img src="assets/drop-icon-down.svg" /></button>
       <img
         alt="${headline.value}"
         class="modal-img"
         src="${imgSrc.value}"
       />
-      <button class="circle-btn modal-next" onclick="projectNext(${id})"><img src="assets/drop-icon-down.svg" /></button>
+      <button class="circle-btn modal-next" onclick="projectNext(${id})">
+      <img src="assets/drop-icon-down.svg" /></button>
     </div>
     <div class="modal-div-content">
       <p>
@@ -237,8 +255,14 @@ class workModal extends HTMLElement {
         </ul>
         <hr />
         <div class="modal-buttons">
-          <a class="btn modal-btn" href="${demoLink.value}"><span>See Live <img src="assets/live.svg" class="modal-button-img"/></span></a>
-          <a class="btn modal-btn" href="${sourceLink.value}"><span>See Source <img src="assets/github-2.svg" class="modal-button-img"/></span></a>
+          <a class="btn modal-btn" href="${demoLink.value}">
+          <span>See Live <img src="assets/live.svg" 
+          class="modal-button-img"/></span>
+          </a>
+          <a class="btn modal-btn" href="${sourceLink.value}">
+          <span>See Source <img src="assets/github-2.svg" 
+          class="modal-button-img"/>
+          </span></a>
         </div>
       </div>
     </div>
@@ -246,13 +270,13 @@ class workModal extends HTMLElement {
   }
 }
 
-customElements.define("work-card", workCard);
-customElements.define("work-modal", workModal);
+customElements.define('work-card', workCard);
+customElements.define('work-modal', workModal);
 
 const main = () => {
   for (const [i, work] of workData.entries()) {
-    const { headline, subtitles, description, tags, imgSrc } = work;
-    const workItem = document.createElement("li");
+    const {headline, subtitles, description, tags, imgSrc} = work;
+    const workItem = document.createElement('li');
     workItem.innerHTML = `<work-card
     headline='${headline}'
     subtitles='${subtitles}'
@@ -262,7 +286,7 @@ const main = () => {
     i='${i + 1}'
     ></work-card>`;
 
-    const workContainer = document.querySelector(".work-container");
+    const workContainer = document.querySelector('.work-container');
     workContainer.appendChild(workItem);
   }
 };
@@ -270,38 +294,38 @@ const main = () => {
 main();
 
 const showMobileMenu = () => {
-  const menu = document.getElementById("mobile-menu");
-  menu.style.visibility = "visible";
-  menu.style.height = "100%";
-  menu.style.width = "100%";
+  const menu = document.getElementById('mobile-menu');
+  menu.style.visibility = 'visible';
+  menu.style.height = '100%';
+  menu.style.width = '100%';
 };
 
 const closeMobileMenu = () => {
-  const menu = document.getElementById("mobile-menu");
-  menu.style.height = "0";
+  const menu = document.getElementById('mobile-menu');
+  menu.style.height = '0';
   setTimeout(() => {
-    menu.style.visibility = "hidden";
+    menu.style.visibility = 'hidden';
   }, 500);
 };
 
-const accordionEL = document.querySelectorAll(".accordion");
-const panels = document.querySelectorAll(".panel");
-const defaultAccordion = document.querySelector(".accordion-default");
+const accordionEL = document.querySelectorAll('.accordion');
+const panels = document.querySelectorAll('.panel');
+const defaultAccordion = document.querySelector('.accordion-default');
 
 const rotateArrowRight = (icon) => {
-  icon[0].classList.add("accordion-icon-open");
+  icon[0].classList.add('accordion-icon-open');
 };
 
 const rotateArrowUp = (icon) => {
-  icon[0].classList.remove("accordion-icon-open");
+  icon[0].classList.remove('accordion-icon-open');
 };
 
 const handleAccordion = (accordion) => {
   const sibling = accordion.nextElementSibling;
-  const icon = accordion.getElementsByTagName("img");
+  const icon = accordion.getElementsByTagName('img');
 
   accordionEL.forEach((acc) => {
-    const otherIcon = acc.getElementsByTagName("img");
+    const otherIcon = acc.getElementsByTagName('img');
 
     if (acc !== accordion) {
       rotateArrowUp(otherIcon);
@@ -314,7 +338,7 @@ const handleAccordion = (accordion) => {
         panel.style.maxHeight = null;
         rotateArrowUp(icon);
       } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.style.maxHeight = panel.scrollHeight + 'px';
         rotateArrowRight(icon);
       }
     } else {
@@ -326,35 +350,38 @@ const handleAccordion = (accordion) => {
 accordionEL.forEach((acc) => {
   if (acc == defaultAccordion) {
     const sibling = acc.nextElementSibling;
-    const icon = acc.getElementsByTagName("img");
+    const icon = acc.getElementsByTagName('img');
     rotateArrowRight(icon);
-    sibling.style.maxHeight = sibling.scrollHeight + "px";
+    sibling.style.maxHeight = sibling.scrollHeight + 'px';
   }
 
-  acc.addEventListener("click", () => {
+  acc.addEventListener('click', () => {
     handleAccordion(acc);
   });
 });
 
-let sections = document.querySelectorAll("section");
-let navLinks = document.querySelectorAll(".links");
+const openMenu = document.getElementById('open-menu');
+openMenu.addEventListener('click', showMobileMenu);
+
+const closeMenu = document.getElementById('close-menu');
+closeMenu.addEventListener('click', closeMobileMenu);
+
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.links');
 
 window.onscroll = () => {
   sections.forEach((sec) => {
-    let top = window.scrollY;
-    let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight;
-    let id = sec.getAttribute("id");
+    const top = window.scrollY;
+    const offset = sec.offsetTop - 150;
+    const height = sec.offsetHeight;
+    const id = sec.getAttribute('id');
 
     if (top >= offset && top < offset + height) {
       navLinks.forEach((links) => {
-        links.classList.remove("active");
-        const linkHtml = document.querySelector(
-          ".links-container a[href*=" + id + "]"
-        );
-        if (linkHtml) {
-          linkHtml.classList.add("active");
-        }
+        links.classList.remove('active');
+        document
+            .querySelector('.links-container a[href*=' + id + ']')
+            .classList.add('active');
       });
     }
   });

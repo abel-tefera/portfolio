@@ -1,0 +1,30 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "<a name=\"readme-top\"></a>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abel-tefera/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abel-tefera/portfolio/issues"
+  },
+  "homepage": "https://github.com/abel-tefera/portfolio#readme",
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "stylelint": "^15.1.0",
+    "stylelint-config-standard": "^30.0.1"
+  }
+}
