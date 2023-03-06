@@ -664,7 +664,7 @@ input:focus {
   padding: 0 1rem;
 }
 
-.accordion-active, .accordion:hover {
+.accordion:hover {
   background-color: #ccc;
 }
 
@@ -675,7 +675,7 @@ input:focus {
 }
 
 .accordion-icon {
-  transition:  transform 0.2s;
+  transition: transform 0.2s;
 }
 
 .accordion-icon-open {

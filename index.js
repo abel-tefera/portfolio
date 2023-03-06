@@ -280,7 +280,7 @@ const handleAccordion = (accordion) => {
     const otherIcon = acc.getElementsByTagName("img");
 
     if (acc !== accordion) {
-      rotateArrowUp(otherIcon)
+      rotateArrowUp(otherIcon);
     }
   });
 
@@ -288,10 +288,10 @@ const handleAccordion = (accordion) => {
     if (panel == sibling) {
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
-        rotateArrowUp(icon)
+        rotateArrowUp(icon);
       } else {
         panel.style.maxHeight = panel.scrollHeight + "px";
-        rotateArrowRight(icon)
+        rotateArrowRight(icon);
       }
     } else {
       panel.style.maxHeight = null;
