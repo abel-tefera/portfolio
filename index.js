@@ -33,12 +33,8 @@ const workData = [
       "css",
       "javascript",
       "c#",
-      "c",
       "python",
       "react",
-      "ionic",
-      "flutter",
-      "django",
       "node.js",
     ],
     imgSrc: "assets/portfolio-3.svg",
@@ -99,7 +95,7 @@ const openModal = (id) => {
   modal.classList.add("open-modal");
   modalOverlay.classList.add("open-modal");
 
-  // document.body.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
 };
 
 const closeModal = function () {
