@@ -172,7 +172,7 @@ class workCard extends HTMLElement {
     const subtitlesArr = subtitles.value.split(',');
     const id = parseInt(i.value);
 
-    const reverse = id % 2 === 0 ? 'work-card-reversed' : '';
+    const reverse = id % 2 === 0 ? '' : 'work-card-reversed';
 
     const tagsLi = tagsArr
         .map(
