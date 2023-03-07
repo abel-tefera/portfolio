@@ -172,7 +172,7 @@ class workCard extends HTMLElement {
     const subtitlesArr = subtitles.value.split(',');
     const id = parseInt(i.value);
 
-    const reverse = id % 2 === 0 ? 'work-card-reversed' : '';
+    const reverse = id % 2 === 0 ? '' : 'work-card-reversed';
 
     const tagsLi = tagsArr
         .map(
@@ -383,6 +383,29 @@ openMenu.addEventListener('click', showMobileMenu);
 
 const closeMenu = document.getElementById('close-menu');
 closeMenu.addEventListener('click', closeMobileMenu);
+
+const formValidation = (input) => {
+  if (input.match(/^[a-z@.0-9-_]*$/)) {
+    return true;
+  }
+  return false;
+};
+
+const form = document.querySelector('.contact-form');
+const email = document.querySelector('.contact-email');
+const error = document.querySelector('.contact-error');
+
+form.addEventListener('submit', (e) => {
+  if (formValidation(email.value)) {
+    error.textContent = '';
+  } else {
+    e.preventDefault();
+    error.textContent = 'Email should be in lowerCase';
+    setTimeout(() => {
+      error.textContent = '';
+    }, 3000);
+  }
+});
 
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.links');

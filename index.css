@@ -661,6 +661,7 @@ input:focus {
 .accordion {
   transition: 0.4s;
   padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .accordion:hover {
@@ -683,6 +684,10 @@ input:focus {
 
 .circle-btn {
   display: none;
+}
+
+.contact-error {
+  color: rgb(255, 0, 0);
 }
 
 @media only screen and (min-width: 768px) {
@@ -798,6 +803,8 @@ input:focus {
   .work-card {
     flex-direction: row;
     width: 95%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .work-card-reversed {
