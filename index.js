@@ -384,6 +384,23 @@ openMenu.addEventListener('click', showMobileMenu);
 const closeMenu = document.getElementById('close-menu');
 closeMenu.addEventListener('click', closeMobileMenu);
 
+const formValidation = (input) => {
+  if (input.match(/^[a-z@.0-9-_]*$/)) {
+    return true;
+  }
+  return false;
+};
+
+const form = document.querySelector('.contact-form');
+const email = document.querySelector('.contact-email');
+const error = document.querySelector('.contact-error');
+
+form.addEventListener('submit', (e) => {
+  if (formValidation(email.value)) {
+    error.textContent = '';
+  }
+});
+
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.links');
 

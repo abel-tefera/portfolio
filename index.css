@@ -685,6 +685,10 @@ input:focus {
   display: none;
 }
 
+.contact-error {
+  color: rgb(255, 0, 0);
+}
+
 @media only screen and (min-width: 768px) {
   .header {
     height: 4rem;
