@@ -398,6 +398,12 @@ const error = document.querySelector('.contact-error');
 form.addEventListener('submit', (e) => {
   if (formValidation(email.value)) {
     error.textContent = '';
+  } else {
+    e.preventDefault();
+    error.textContent = 'Email should be in lowerCase';
+    setTimeout(() => {
+      error.textContent = '';
+    }, 3000);
   }
 });
 
