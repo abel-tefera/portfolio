@@ -431,7 +431,7 @@ const error = document.querySelector('.contact-error');
 form.addEventListener('submit', (e) => {
   if (formValidation(email.value)) {
     error.textContent = '';
-    localStorage.setItem('contact-data', null);
+    localStorage.removeItem('contact-data');
   } else {
     e.preventDefault();
     error.textContent = 'Email should be in lowerCase';
