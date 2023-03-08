@@ -340,6 +340,7 @@ const saveToLocalStorage = () => {
     email: inputEmail,
     message: inputMessage,
   };
+  localStorage.setItem('contact-data', JSON.stringify(contactObj));
 };
 
 main();
