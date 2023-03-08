@@ -202,30 +202,36 @@
         >
           <label for="name" title="Name"></label>
           <input
+            id="input-name"
             name="name"
             type="text"
             placeholder="name"
             maxlength="30"
             required
             title="Name"
+            onkeyup="saveToLocalStorage()"
           />
           <label for="email">Email</label>
           <input
+            id="input-email"
             name="email"
             type="email"
             placeholder="email"
             required
             title="Email"
             class="contact-email"
+            onkeyup="saveToLocalStorage()"
           />
           <label for="message">Message</label>
           <textarea
+            id="input-message"
             name="message"
             rows="6"
             placeholder="Write your message here"
             maxlength="500"
             required
             title="Message"
+            onkeyup="saveToLocalStorage()"
           ></textarea>
           <span class="contact-error"></span>
           <button outlined type="submit" class="btn btn-inverse">

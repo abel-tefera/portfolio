@@ -86,6 +86,8 @@ const workModalMarkup = (id) => {
   ></work-modal>`;
 };
 
+let currentIdx = 0;
+
 const openModal = (id) => {
   const workModal = document.createElement('div');
   workModal.setAttribute('id', 'work-modal');
@@ -100,6 +102,8 @@ const openModal = (id) => {
 
   modal.classList.add('open-modal');
   modalOverlay.classList.add('open-modal');
+
+  currentIdx = id;
 
   document.body.style.overflow = 'hidden';
 };
@@ -120,7 +124,7 @@ const closeModal = function() {
 
 modalOverlay.addEventListener('click', closeModal);
 
-const projectPrev = (idx) => {
+const projectPrev = (idx = currentIdx) => {
   const index = parseInt(idx);
 
   if (index === 0) {
@@ -140,9 +144,11 @@ const projectPrev = (idx) => {
   if (nextBtn.disabled === true) {
     nextBtn.disabled = false;
   }
+
+  currentIdx = index - 1;
 };
 
-const projectNext = (idx) => {
+const projectNext = (idx = currentIdx) => {
   const index = parseInt(idx);
 
   if (index === workData.length - 1) {
@@ -162,6 +168,8 @@ const projectNext = (idx) => {
   if (prevBtn.disabled === true) {
     prevBtn.disabled = false;
   }
+
+  currentIdx = index + 1;
 };
 
 class workCard extends HTMLElement {
@@ -307,6 +315,32 @@ const main = () => {
     const workContainer = document.querySelector('.work-container');
     workContainer.appendChild(workItem);
   }
+
+  const contactData = localStorage.getItem('contact-data');
+
+  if (contactData) {
+    const {name, email, message} = JSON.parse(contactData);
+    const inputName = document.getElementById('input-name');
+    const inputEmail = document.getElementById('input-email');
+    const inputMessage = document.getElementById('input-message');
+
+    inputName.value = name;
+    inputEmail.value = email;
+    inputMessage.value = message;
+  }
+};
+
+const saveToLocalStorage = () => {
+  const inputName = document.getElementById('input-name').value;
+  const inputEmail = document.getElementById('input-email').value;
+  const inputMessage = document.getElementById('input-message').value;
+
+  const contactObj = {
+    name: inputName,
+    email: inputEmail,
+    message: inputMessage,
+  };
+  localStorage.setItem('contact-data', JSON.stringify(contactObj));
 };
 
 main();
@@ -398,6 +432,7 @@ const error = document.querySelector('.contact-error');
 form.addEventListener('submit', (e) => {
   if (formValidation(email.value)) {
     error.textContent = '';
+    localStorage.removeItem('contact-data');
   } else {
     e.preventDefault();
     error.textContent = 'Email should be in lowerCase';
@@ -430,3 +465,22 @@ window.onscroll = () => {
     }
   });
 };
+
+document.addEventListener(
+    'keydown',
+    (e) => {
+      const code = e.code;
+
+      const modal = document.querySelector('.modal-content');
+      if (modal) {
+        if (code == 'ArrowLeft') {
+          projectPrev();
+        } else if (code == 'ArrowRight') {
+          projectNext();
+        } else if (code == 'Escape') {
+          closeModal();
+        }
+      }
+    },
+    false,
+);
