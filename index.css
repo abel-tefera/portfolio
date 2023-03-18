@@ -427,6 +427,7 @@ input:focus {
 .work-img {
   width: 100%;
   border-radius: 1rem;
+  object-fit: cover;
 }
 
 .work-info-sub {
@@ -956,7 +957,8 @@ input:focus {
   }
 
   .modal-img {
-    width: auto;
+    max-width: 80%;
+    max-height: 30rem;
     align-self: center;
   }
 

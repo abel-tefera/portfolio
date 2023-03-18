@@ -2,14 +2,14 @@
 /* eslint-disable no-unused-vars */
 const workData = [
   {
-    headline: 'Tonic',
-    subtitles: ['CANOPY', 'Back End Dev', 2015],
-    description: `A daily selection of privately personalized reads;
-    no accounts or sign-ups required.`,
-    tags: ['html', 'css', 'javascript'],
-    imgSrc: 'assets/portfolio-1.svg',
-    sourceLink: 'https://github.com/abel-tefera/portfolio',
-    demoLink: 'https://abel-tefera.github.io/',
+    headline: 'JMF Chess',
+    subtitles: ['MICROVERSE', 'Front End Dev', 2023],
+    description: `A website for an international Chess tournament 
+    hosted in Addis Ababa, Ethiopia`,
+    tags: ['html', 'css', 'javascript', 'bootstrap', 'sass'],
+    imgSrc: 'assets/jmf-chess.png',
+    sourceLink: 'https://github.com/abel-tefera/html-css-capstone',
+    demoLink: 'https://abel-tefera.github.io/html-css-capstone/',
   },
   {
     headline: 'Multi-Post Stories',
