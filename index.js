@@ -11,8 +11,8 @@ const workData = [
     hosted in Addis Ababa, Ethiopia`,
     tags: ['html', 'css', 'javascript', 'bootstrap', 'sass'],
     imgSrc: 'assets/jmf-chess.png',
-    sourceLink: 'https://github.com/abel-tefera/html-css-capstone',
-    demoLink: 'https://abel-tefera.github.io/html-css-capstone/',
+    sourceLink: 'https://github.com/abel-tefera/jmf-chess',
+    demoLink: 'https://abel-tefera.github.io/jmf-chess/',
   },
   {
     headline: 'Merkato E-commerce',
@@ -21,7 +21,7 @@ const workData = [
     MERN stack`,
     tags: ['MERN stack', 'Mongo DB', 'Express.js', 'React', 'Node Js', 'paypal', 'render.com'],
     imgSrc: 'assets/market.png',
-    sourceLink: 'https://github.com/abel-tefera/React-Shop',
+    sourceLink: 'https://github.com/abel-tefera/Merkato-Ecommerce',
     demoLink: 'https://merkato-market.onrender.com/',
   },
   {
