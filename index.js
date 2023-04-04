@@ -1,9 +1,12 @@
+/* eslint-disable */
+
 /* eslint-disable require-jsdoc */
 /* eslint-disable no-unused-vars */
+
 const workData = [
   {
     headline: 'JMF Chess',
-    subtitles: ['MICROVERSE', 'Front End Dev', 2023],
+    subtitles: ['MICROVERSE', 'Front End', 2023],
     description: `A website for an international Chess tournament 
     hosted in Addis Ababa, Ethiopia`,
     tags: ['html', 'css', 'javascript', 'bootstrap', 'sass'],
@@ -12,35 +15,28 @@ const workData = [
     demoLink: 'https://abel-tefera.github.io/html-css-capstone/',
   },
   {
-    headline: 'Multi-Post Stories',
-    subtitles: ['FACEBOOK', 'Full Stack Dev', 2015],
-    description: `Experimental content creation feature that allows users 
-    to add to an existing story over the course of a day without spamming their
-    friends.`,
-    tags: ['html', 'Ruby on rails', 'css', 'javascript'],
-    imgSrc: 'assets/portfolio-2.svg',
-    sourceLink: 'https://github.com/abel-tefera/portfolio',
-    demoLink: 'https://abel-tefera.github.io/',
+    headline: 'Merkato E-commerce',
+    subtitles: ['SELF', 'Full Stack', 2021],
+    description: `A complete E-commerce app integrated to PayPal sandbox. Built on the 
+    MERN stack`,
+    tags: ['MERN stack', 'Mongo DB', 'Express.js', 'React', 'Node Js', 'paypal', 'render.com'],
+    imgSrc: 'assets/market.png',
+    sourceLink: 'https://github.com/abel-tefera/React-Shop',
+    demoLink: 'https://merkato-market.onrender.com/',
   },
   {
-    headline: 'Facebook 360',
-    subtitles: ['FACEBOOK', 'Full Stack Dev', 2015],
-    description: `Exploring the future of media in Facebook's first Virtual 
-    Reality app; a place to discover and enjoy 360 photos and videos on Gear
-    VR.`,
+    headline: 'To-Do List',
+    subtitles: ['Microverse', 'Front End', 2023],
+    description: `A simple to-do list app with CRUD (local storage), bundled with webpack.`,
     tags: [
       'html',
-      'Ruby on rails',
       'css',
       'javascript',
-      'c#',
-      'python',
-      'react',
-      'node.js',
+      'webpack',
     ],
-    imgSrc: 'assets/portfolio-3.svg',
-    sourceLink: 'https://github.com/abel-tefera/portfolio',
-    demoLink: 'https://abel-tefera.github.io/',
+    imgSrc: 'assets/To-Do.png',
+    sourceLink: 'https://github.com/abel-tefera/to-do-list',
+    demoLink: 'https://abel-tefera.github.io/to-do-list/dist/',
   },
   {
     headline: 'Uber Navigation',
@@ -281,11 +277,11 @@ class workModal extends HTMLElement {
         </ul>
         <hr />
         <div class="modal-buttons">
-          <a class="btn modal-btn" href="${demoLink.value}">
+          <a class="btn modal-btn" href="${demoLink.value}" target="_blank">
           <span>See Live <img src="assets/live.svg" 
           class="modal-button-img"/></span>
           </a>
-          <a class="btn modal-btn" href="${sourceLink.value}">
+          <a class="btn modal-btn" href="${sourceLink.value}" target="_blank">
           <span>See Source <img src="assets/github-2.svg" 
           class="modal-button-img"/>
           </span></a>
