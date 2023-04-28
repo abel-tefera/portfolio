@@ -39,14 +39,13 @@ const workData = [
     demoLink: 'https://abel-tefera.github.io/to-do-list/dist/',
   },
   {
-    headline: 'Uber Navigation',
-    subtitles: ['Uber', 'Lead Developer', 2018],
-    description: `A smart assistant to make driving more safe, efficient, and 
-    fun by unlocking your most expensive computer: your car.`,
-    tags: ['html', 'Ruby on rails', 'css', 'javascript'],
-    imgSrc: 'assets/portfolio-5.svg',
-    sourceLink: 'https://github.com/abel-tefera/portfolio',
-    demoLink: 'https://abel-tefera.github.io/',
+    headline: 'Metro Art',
+    subtitles: ['Microverse', 'Lead Developer', 2023],
+    description: `A website which consumes the Metropolitan Museum of Art API`,
+    tags: ['html', 'tailwindcss', 'javascript', 'webpack', 'rest-api'],
+    imgSrc: 'assets/portfolio-4.png',
+    sourceLink: 'https://github.com/abel-tefera/js-capstone',
+    demoLink: 'https://abel-tefera.github.io/js-capstone/public',
   },
 ];
 
