@@ -40,12 +40,21 @@ const workData = [
   },
   {
     headline: 'Metro Art',
-    subtitles: ['Microverse', 'Lead Developer', 2023],
+    subtitles: ['Microverse', 'Front End', 2023],
     description: `A website which consumes the Metropolitan Museum of Art API`,
     tags: ['html', 'tailwindcss', 'javascript', 'webpack', 'rest-api'],
     imgSrc: 'assets/portfolio-4.png',
     sourceLink: 'https://github.com/abel-tefera/js-capstone',
     demoLink: 'https://abel-tefera.github.io/js-capstone/public',
+  },
+  {
+    headline: 'Math Magicians',
+    subtitles: ['Microverse', 'Front End', 2023],
+    description: `Welcome to Math Magicians, a react application for all fans of mathematics`,
+    tags: ['react', 'tailwindcss'],
+    imgSrc: 'assets/math-magicians.png',
+    sourceLink: 'https://github.com/abel-tefera/math-magicians',
+    demoLink: 'https://math-magicians-5y9o.onrender.com/',
   },
 ];
 
