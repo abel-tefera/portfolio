@@ -25,6 +25,15 @@ const workData = [
     demoLink: 'https://merkato-market.onrender.com/',
   },
   {
+    headline: 'FBI Most Wanted',
+    subtitles: ['Microverse', 'Front End', 2023],
+    description: `Welcome to FBI Most Wanted, a react SPA to search through the FBI's wanted program`,
+    tags: ['react', 'redux', 'tailwindcss'],
+    imgSrc: 'assets/fbi.png',
+    sourceLink: 'https://github.com/abel-tefera/fbi-most-wanted',
+    demoLink: 'https://fbi-most-wanted.onrender.com/',
+  },
+  {
     headline: 'To-Do List',
     subtitles: ['Microverse', 'Front End', 2023],
     description: `A simple to-do list app with CRUD (local storage), bundled with webpack.`,
