@@ -428,6 +428,7 @@ input:focus {
   width: 100%;
   border-radius: 1rem;
   object-fit: cover;
+  max-height: 18rem;
 }
 
 .work-info-sub {
@@ -544,7 +545,7 @@ input:focus {
   padding-left: 1rem;
   padding-right: 1rem;
   box-sizing: border-box;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   opacity: 0;
   pointer-events: none;
   overflow-y: scroll;
@@ -565,7 +566,7 @@ input:focus {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(0.5rem);
   z-index: 9;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   opacity: 0;
   pointer-events: none;
   overflow: hidden;
@@ -988,6 +989,12 @@ input:focus {
   .modal-div-content > p {
     margin-right: 1rem;
     width: 60%;
+  }
+
+  .modal-div-description {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   .modal-right {

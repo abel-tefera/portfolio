@@ -5,6 +5,36 @@
 
 const workData = [
   {
+    headline: "Doctor&apos;s Appointment",
+    subtitles: ["MICROVERSE", "Full-Stack", 2023],
+    description: `A website to book appointments with doctors`,
+    tags: ["react", "ruby on rails", "remote collaboration"],
+    details: `Built by following a website design on Behance, this website streamlines the patient-doctor appointment process. Built using React & Ruby on Rails.`,
+    imgSrc: "assets/doctor.png",
+    sourceLink: "https://github.com/abel-tefera/doctor-appointment-front-end",
+    demoLink: "https://doctors.abeltb.xyz/",
+  },
+  {
+    headline: "iBudget",
+    subtitles: ["MICROVERSE", "Full-Stack", 2023],
+    description: `An elegant expense tracking app. Built using Ruby on Rails.`,
+    tags: ["ruby on rails", "tailwindcss"],
+    details: `Built by following a website design on Behance, users can use this website to track their expenses.`,
+    imgSrc: "assets/ibudget.png",
+    sourceLink: "https://github.com/abel-tefera/ibudget",
+    demoLink: "https://ibudget.abeltb.xyz/",
+  },
+  {
+    headline: "Recipe App",
+    subtitles: ["MICROVERSE", "Full-Stack", 2023],
+    description: `A recipe sharing app built using Ruby on Rails.`,
+    tags: ["ruby on rails", "tailwindcss", "remote collaboration"],
+    details: `This app lets users share their favorite recipes with the world. Built using Ruby on Rails.`,
+    imgSrc: "assets/recipe.png",
+    sourceLink: "https://github.com/abel-tefera/recipe-app",
+    demoLink: "https://recipe-app.abeltb.xyz/",
+  },
+  {
     headline: "JMF Chess",
     subtitles: ["MICROVERSE", "Front End", 2023],
     description: `A website for an international Chess tournament 
@@ -16,6 +46,7 @@ const workData = [
     sourceLink: "https://github.com/abel-tefera/jmf-chess",
     demoLink: "https://abel-tefera.github.io/jmf-chess/",
   },
+
   {
     headline: "Merkato E-commerce",
     subtitles: ["SELF", "Full Stack", 2021],
@@ -37,6 +68,7 @@ const workData = [
     sourceLink: "https://github.com/abel-tefera/Merkato-Ecommerce",
     demoLink: "https://merkato-market.onrender.com/",
   },
+
   {
     headline: "FBI Most Wanted",
     subtitles: ["Microverse", "Front End", 2023],
@@ -45,7 +77,27 @@ const workData = [
     details: "A React SPA built for my React Capstone Project at Microverse.",
     imgSrc: "assets/fbi.png",
     sourceLink: "https://github.com/abel-tefera/fbi-most-wanted",
-    demoLink: "https://fbi-most-wanted.onrender.com/",
+    demoLink: "https://fbi-most-wanted.abeltb.xyz/",
+  },
+  {
+    headline: "Bookstore CMS",
+    subtitles: ["MICROVERSE", "Frontend", 2023],
+    description: `A bookstore cms built using React & Redux.`,
+    tags: ["React", "Redux", "CSS"],
+    details: `This app lets users add books to their library and track their reading progress. Built using React & Redux.`,
+    imgSrc: "assets/bookstore.png",
+    sourceLink: "https://github.com/abel-tefera/bookstore",
+    demoLink: "https://bookstore.abeltb.xyz/",
+  },
+  {
+    headline: "Space Travellers Hub",
+    subtitles: ["MICROVERSE", "Frontend", 2023],
+    description: `A rocket booking app built using React & Redux.`,
+    tags: ["React", "Redux", "tailwindcss"],
+    details: `This app lets users book rockets and join missions to Mars. Built using React & Redux.`,
+    imgSrc: "assets/space.png",
+    sourceLink: "https://github.com/abel-tefera/space-travellers-hub",
+    demoLink: "https://space-travellers-hub.abeltb.xyz/",
   },
   {
     headline: "To-Do List",
